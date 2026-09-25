@@ -1,7 +1,10 @@
 import React from 'react';
-import { ShieldCheck, Calendar, Phone, Award, Sparkles, BookOpen, Compass, HeartHandshake } from 'lucide-react';
+import { ShieldCheck, Calendar, Phone, Award, Sparkles, BookOpen, Compass, HeartHandshake, MessageCircle } from 'lucide-react';
 import { DurgaAmmanEmblem, JadhagaKattamIcon, OlaichuvadiIcon, BrassVilakku } from '../components/ui/SacredIcons';
-import { BUSINESS_INFO } from '../data/astrologyData';
+import { BUSINESS_INFO, ASTROLOGER_PROFILE } from '../data/astrologyData';
+import { AstrologerTitles } from '../components/common/AstrologerTitles';
+import { CtaSocialStrip } from '../components/common/SocialMediaBar';
+import { AstrologerPortrait } from '../components/common/AstrologerPortrait';
 
 interface AboutPageProps {
   onOpenAppointment: () => void;
@@ -9,6 +12,10 @@ interface AboutPageProps {
 }
 
 export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment, onNavigateContact }) => {
+  const whatsappUrl = `https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(
+    'வணக்கம் ஐயா, ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையத்தில் ஜோதிட ஆலோசனை பெற விரும்புகிறேன்.'
+  )}`;
+
   return (
     <div className="bg-[#FFF8D6] text-[#1B0D09]">
       {/* Editorial Header in Bright Golden Yellow */}
@@ -34,31 +41,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment, onNavig
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: Traditional Gold Framed Astrologer Presentation */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative p-3 rounded-3xl bg-gradient-to-b from-[#FFD91A] via-[#C9971A] to-[#74191A] shadow-2xl max-w-sm w-full">
+              <div className="relative p-3 rounded-3xl bg-gradient-to-b from-[#FFD91A] via-[#C9971A] to-[#74191A] shadow-2xl max-w-md w-full">
                 <div className="bg-[#74191A] rounded-[22px] p-6 text-center text-[#FFFDF5] relative overflow-hidden border border-[#FFD91A]/30">
-                  <div className="w-48 h-48 mx-auto mb-6 rounded-full p-2 bg-gradient-to-tr from-[#74191A] via-[#FFD91A] to-white shadow-xl">
-                    <div className="w-full h-full rounded-full bg-[#FFFDF5] flex flex-col items-center justify-center border-2 border-[#74191A] overflow-hidden shadow-inner">
-                      <DurgaAmmanEmblem size={100} />
-                      <span className="text-[10px] text-[#74191A] font-extrabold mt-1">
-                        ஜோதிட பீடம்
-                      </span>
-                    </div>
+                  <div className="mb-6 flex justify-center">
+                    <AstrologerPortrait size="2xl" />
                   </div>
 
-                  <span className="text-xs font-bold text-[#FFD91A] uppercase tracking-wider block">
-                    கணித ஜோதிடர்
-                  </span>
-                  <h2 className="font-heading text-2xl font-bold text-[#FFFDF5] mt-1">
-                    {BUSINESS_INFO.astrologer}
-                  </h2>
-                  <p className="text-xs font-mono text-[#FFD91A] font-semibold mt-1">
-                    {BUSINESS_INFO.qualifications}
-                  </p>
-
-                  <div className="mt-6 pt-4 border-t border-[#FFD91A]/30 flex items-center justify-center gap-2 text-xs text-[#FFFDF5]">
-                    <ShieldCheck size={16} className="text-[#FFD91A]" />
-                    <span>அரசு பதிவு எண்: <strong className="text-[#FFD91A]">{BUSINESS_INFO.govReg}</strong></span>
-                  </div>
+                  <AstrologerTitles variant="card" showGovReg={true} />
                 </div>
               </div>
             </div>
@@ -134,6 +123,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment, onNavig
                   <Calendar size={16} />
                   <span>ஆலோசனை முன்பதிவு</span>
                 </button>
+
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-7 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
+                >
+                  <MessageCircle size={16} className="text-white fill-white" />
+                  <span>WhatsApp தொடர்பு</span>
+                </a>
+
                 <button
                   onClick={onNavigateContact}
                   className="px-7 py-3.5 rounded-xl bg-white border-2 border-[#74191A] text-[#74191A] hover:bg-[#FFFDF5] text-xs sm:text-sm font-extrabold transition-all shadow-sm active:scale-95 cursor-pointer"
@@ -188,6 +188,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment, onNavig
                 லக்கினம், ராசி மற்றும் 12 பாவங்களின் முழுமையான விபர கணிப்பு.
               </p>
             </div>
+          </div>
+
+          {/* Social Media Connect Strip */}
+          <div className="mt-12 pt-8 border-t border-[#C9971A]/30">
+            <CtaSocialStrip />
           </div>
         </div>
       </section>

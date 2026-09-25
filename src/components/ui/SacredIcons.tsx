@@ -1,70 +1,109 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-// Sacred Sri Durga Amman Medallion
-export const DurgaAmmanEmblem: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 56 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 100 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className={`inline-block ${className}`}
-  >
-    <defs>
-      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#FFF4A8" />
-        <stop offset="40%" stopColor="#FFD91A" />
-        <stop offset="80%" stopColor="#C9971A" />
-        <stop offset="100%" stopColor="#8A5A0A" />
-      </linearGradient>
-      <radialGradient id="maroonRadial" cx="50%" cy="50%" r="50%">
-        <stop offset="0%" stopColor="#B52222" />
-        <stop offset="65%" stopColor="#74191A" />
-        <stop offset="100%" stopColor="#581213" />
-      </radialGradient>
-    </defs>
+export const OFFICIAL_LOGO_URL = 'https://res.cloudinary.com/hifi11courses/image/upload/v1790360838/ChatGPT_Image_Sep_25_2026_11_56_57_PM_ra1bkv.png';
 
-    {/* Outer decorative ring */}
-    <circle cx="50" cy="50" r="48" fill="url(#maroonRadial)" stroke="#FFD91A" strokeWidth="2.5" />
-    <circle cx="50" cy="50" r="44" stroke="#FFF4A8" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.9" />
-    <circle cx="50" cy="50" r="41" stroke="#FFD91A" strokeWidth="1" />
+// Sacred Sri Durga Amman Medallion / Official Logo
+export const DurgaAmmanEmblem: React.FC<{ className?: string; size?: number; alt?: string }> = ({
+  className = '',
+  size = 56,
+  alt = 'ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையம் அதிகாரப்பூர்வ சின்னம்',
+}) => {
+  const [hasError, setHasError] = useState(false);
+  const [srcIndex, setSrcIndex] = useState(0);
 
-    {/* Radiating 12 petals/rays for 12 Rasis */}
-    {[...Array(12)].map((_, i) => (
-      <line
-        key={i}
-        x1="50"
-        y1="50"
-        x2={50 + 44 * Math.cos((i * 30 * Math.PI) / 180)}
-        y2={50 + 44 * Math.sin((i * 30 * Math.PI) / 180)}
-        stroke="#FFD91A"
-        strokeWidth="0.8"
-        opacity="0.6"
+  const candidateSources = [
+    OFFICIAL_LOGO_URL,
+    '/logo.png',
+  ];
+
+  const handleImageError = () => {
+    if (srcIndex < candidateSources.length - 1) {
+      setSrcIndex((prev) => prev + 1);
+    } else {
+      setHasError(true);
+    }
+  };
+
+  if (!hasError) {
+    return (
+      <img
+        src={candidateSources[srcIndex]}
+        alt={alt}
+        width={size}
+        height={size}
+        style={{ width: `${size}px`, height: `${size}px` }}
+        className={`inline-block object-contain shrink-0 select-none transition-transform duration-300 ${className}`}
+        onError={handleImageError}
+        loading="eager"
       />
-    ))}
+    );
+  }
 
-    {/* Inner sacred ring */}
-    <circle cx="50" cy="50" r="28" fill="#581213" stroke="#FFD91A" strokeWidth="1.5" />
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`inline-block ${className}`}
+    >
+      <defs>
+        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FFF4A8" />
+          <stop offset="40%" stopColor="#FFD91A" />
+          <stop offset="80%" stopColor="#C9971A" />
+          <stop offset="100%" stopColor="#8A5A0A" />
+        </linearGradient>
+        <radialGradient id="maroonRadial" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="#B52222" />
+          <stop offset="65%" stopColor="#74191A" />
+          <stop offset="100%" stopColor="#581213" />
+        </radialGradient>
+      </defs>
 
-    {/* Sacred Trishul & Devi Motifs */}
-    <path
-      d="M50 20 L50 78 M50 24 C45 32 38 32 35 38 C32 44 42 46 50 48 C58 46 68 44 65 38 C62 32 55 32 50 24 Z"
-      stroke="#FFD91A"
-      strokeWidth="2"
-      fill="#FFD91A"
-      fillOpacity="0.3"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <polygon points="50,16 47,24 53,24" fill="#FFD91A" />
-    <polygon points="34,36 32,41 38,40" fill="#FFD91A" />
-    <polygon points="66,36 62,40 68,41" fill="#FFD91A" />
+      {/* Outer decorative ring */}
+      <circle cx="50" cy="50" r="48" fill="url(#maroonRadial)" stroke="#FFD91A" strokeWidth="2.5" />
+      <circle cx="50" cy="50" r="44" stroke="#FFF4A8" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.9" />
+      <circle cx="50" cy="50" r="41" stroke="#FFD91A" strokeWidth="1" />
 
-    <circle cx="50" cy="52" r="3.5" fill="#FFF4A8" stroke="#8A5A0A" strokeWidth="0.8" />
-    <ellipse cx="50" cy="33" rx="1.8" ry="4" fill="#FFD91A" />
-    <circle cx="50" cy="38" r="1.2" fill="#B52222" />
-  </svg>
-);
+      {/* Radiating 12 petals/rays for 12 Rasis */}
+      {[...Array(12)].map((_, i) => (
+        <line
+          key={i}
+          x1="50"
+          y1="50"
+          x2={50 + 44 * Math.cos((i * 30 * Math.PI) / 180)}
+          y2={50 + 44 * Math.sin((i * 30 * Math.PI) / 180)}
+          stroke="#FFD91A"
+          strokeWidth="0.8"
+          opacity="0.6"
+        />
+      ))}
+
+      {/* Inner sacred ring */}
+      <circle cx="50" cy="50" r="28" fill="#581213" stroke="#FFD91A" strokeWidth="1.5" />
+
+      {/* Sacred Trishul & Devi Motifs */}
+      <path
+        d="M50 20 L50 78 M50 24 C45 32 38 32 35 38 C32 44 42 46 50 48 C58 46 68 44 65 38 C62 32 55 32 50 24 Z"
+        stroke="#FFD91A"
+        strokeWidth="2"
+        fill="#FFD91A"
+        fillOpacity="0.3"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <polygon points="50,16 47,24 53,24" fill="#FFD91A" />
+      <polygon points="34,36 32,41 38,40" fill="#FFD91A" />
+      <polygon points="66,36 62,40 68,41" fill="#FFD91A" />
+
+      <circle cx="50" cy="52" r="3.5" fill="#FFF4A8" stroke="#8A5A0A" strokeWidth="0.8" />
+      <ellipse cx="50" cy="33" rx="1.8" ry="4" fill="#FFD91A" />
+      <circle cx="50" cy="38" r="1.2" fill="#B52222" />
+    </svg>
+  );
+};
 
 // Traditional Brass Kuthu Vilakku (Oil Lamp)
 export const BrassVilakku: React.FC<{ className?: string; size?: number; animate?: boolean }> = ({

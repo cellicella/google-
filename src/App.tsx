@@ -13,7 +13,7 @@ import { VideosPage } from './pages/VideosPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { FaqPage } from './pages/FaqPage';
 import { ContactPage } from './pages/ContactPage';
-import { SERVICES, BUSINESS_INFO } from './data/astrologyData';
+import { SERVICES, BUSINESS_INFO, ASTROLOGER_PROFILE } from './data/astrologyData';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
@@ -39,7 +39,7 @@ export default function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 
-    let pageTitle = `${BUSINESS_INFO.name} | கணித ஜோதிடர் N. சுரேஷ்`;
+    let pageTitle = `${BUSINESS_INFO.name} | ${ASTROLOGER_PROFILE.fullName}`;
     if (currentPath === '/about') {
       pageTitle = `எங்களைப் பற்றி | ${BUSINESS_INFO.name}`;
     } else if (currentPath === '/services') {

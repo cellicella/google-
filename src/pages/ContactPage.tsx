@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MessageCircle, Clock, MapPin, ShieldCheck, Send, CheckCircle, AlertCircle, Loader2, Sparkles } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/astrologyData';
+import { Phone, Mail, MessageCircle, Clock, MapPin, ShieldCheck, Send, CheckCircle, AlertCircle, Loader2, Sparkles, Award } from 'lucide-react';
+import { BUSINESS_INFO, ASTROLOGER_PROFILE } from '../data/astrologyData';
 import { ContactFormData } from '../types';
 import { apiService } from '../services/api';
+import { ContactSocialCards } from '../components/common/SocialMediaBar';
+import { DurgaAmmanEmblem } from '../components/ui/SacredIcons';
+import { AstrologerPortrait } from '../components/common/AstrologerPortrait';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -80,19 +83,34 @@ export const ContactPage: React.FC = () => {
                 </h2>
 
                 {/* Astrologer Badge */}
-                <div className="p-4 bg-[#FFF8D6] rounded-2xl border border-[#C9971A]/40">
-                  <p className="text-xs font-bold text-[#74191A] uppercase tracking-wider">
-                    முதன்மை ஜோதிடர்:
-                  </p>
-                  <p className="font-heading text-base font-extrabold text-[#74191A] mt-0.5">
-                    {BUSINESS_INFO.astrologer}
-                  </p>
-                  <p className="text-xs text-[#B52222] font-mono font-bold">
-                    {BUSINESS_INFO.qualifications}
-                  </p>
-                  <p className="text-xs text-[#1B0D09]/85 mt-1 flex items-center gap-1.5 font-medium">
+                <div className="p-4 bg-[#FFF8D6] rounded-2xl border-2 border-[#C9971A]/50 space-y-2.5">
+                  <div className="flex items-center gap-3">
+                    <AstrologerPortrait size="sm" />
+                    <div>
+                      <div className="flex items-center gap-1.5 text-[#74191A]">
+                        <Award size={13} className="text-[#C9971A]" />
+                        <p className="text-[10px] font-bold uppercase tracking-wider">
+                          முதன்மை வேத கணித ஜோதிடர்:
+                        </p>
+                      </div>
+                      <p className="font-heading text-lg font-extrabold text-[#74191A] leading-tight">
+                        {ASTROLOGER_PROFILE.name}
+                      </p>
+                      <p className="text-xs text-[#B52222] font-mono font-bold mt-0.5">
+                        {ASTROLOGER_PROFILE.qualifications}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* 2-row Tamil Titles arrangement */}
+                  <div className="pt-2 border-t border-[#C9971A]/30 text-[11px] font-serif-tamil text-[#74191A] font-bold leading-relaxed space-y-0.5">
+                    <p>{ASTROLOGER_PROFILE.titleRow1.join(' • ')}</p>
+                    <p>{ASTROLOGER_PROFILE.titleRow2.join(' • ')}</p>
+                  </div>
+
+                  <p className="text-xs text-[#1B0D09]/85 pt-1 border-t border-[#C9971A]/20 flex items-center gap-1.5 font-medium">
                     <ShieldCheck size={14} className="text-[#74191A]" />
-                    அரசு பதிவு எண்: <strong className="text-[#74191A]">{BUSINESS_INFO.govReg}</strong>
+                    அரசு பதிவு எண்: <strong className="text-[#74191A]">{ASTROLOGER_PROFILE.govReg}</strong>
                   </p>
                 </div>
 
@@ -175,6 +193,9 @@ export const ContactPage: React.FC = () => {
                   </div>
                 </div>
               </div>
+
+              {/* Dedicated Official Social Media Cards */}
+              <ContactSocialCards />
             </div>
 
             {/* Right 7 Cols: Contact Enquiry Form */}

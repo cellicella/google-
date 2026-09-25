@@ -1,10 +1,67 @@
-import { ServiceItem, ArticleItem, VideoItem, GalleryItem, RasiItem, NavagrahaItem, FaqItem } from '../types';
+import { ServiceItem, ArticleItem, VideoItem, GalleryItem, RasiItem, NavagrahaItem, FaqItem, SocialMediaConfig, AstrologerProfile } from '../types';
+
+export const ASTROLOGER_PROFILE: AstrologerProfile = {
+  name: 'N. SURESH',
+  qualifications: 'B.Sc., MBA., D.Astro.',
+  fullName: 'N. SURESH B.Sc., MBA., D.Astro.',
+  imageUrl: 'https://res.cloudinary.com/hifi11courses/image/upload/v1790360295/ChatGPT_Image_Sep_25_2026_11_07_51_PM_qwyeyp.png',
+  titles: [
+    'ஜோதிட ரத்னா',
+    'ஜோதிட கலாநிதி',
+    'ஜோதிட சிரோன்மணி',
+    'ஜோதிட வாஸஸ்பதி',
+    'ஜோதிடச்சுடர்',
+    'பாரம்பரிய கணித ஜோதிடர்',
+  ],
+  titleRow1: ['ஜோதிட ரத்னா', 'ஜோதிட கலாநிதி', 'ஜோதிட சிரோன்மணி'],
+  titleRow2: ['ஜோதிட வாஸஸ்பதி', 'ஜோதிடச்சுடர்', 'பாரம்பரிய கணித ஜோதிடர்'],
+  govReg: '162/2022',
+};
+
+// Social Media configuration: Handles are confirmed.
+// URLs can be updated here at any time. When url is non-empty, the icon is clickable.
+export const SOCIAL_MEDIA: Record<'instagram' | 'youtube' | 'facebook' | 'telegram', SocialMediaConfig> = {
+  instagram: {
+    id: 'instagram',
+    platform: 'Instagram',
+    tamilName: 'இன்ஸ்டாகிராம்',
+    handle: 'imjothidar',
+    url: 'https://www.instagram.com/imjothidar',
+  },
+  youtube: {
+    id: 'youtube',
+    platform: 'YouTube',
+    tamilName: 'யூடியூப்',
+    handle: 'imjotidar',
+    url: 'https://www.youtube.com/@imjotidar',
+  },
+  facebook: {
+    id: 'facebook',
+    platform: 'Facebook',
+    tamilName: 'பேஸ்புக்',
+    handle: 'துர்க்கை அம்மன் ஜோதிட நிலையம்',
+    url: '', // Editable configuration: leave empty until direct Facebook page URL is configured
+  },
+  telegram: {
+    id: 'telegram',
+    platform: 'Telegram',
+    tamilName: 'டெலிகிராம்',
+    handle: 'ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையம்',
+    url: '', // Editable configuration: leave empty until direct Telegram channel/group URL is configured
+  },
+};
 
 export const BUSINESS_INFO = {
   name: 'ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையம்',
   tagline: 'பாரம்பரிய ஜோதிட அறிவுடன் உங்கள் வாழ்க்கைப் பாதைக்கு வழிகாட்டுதல்',
-  astrologer: 'கணித ஜோதிடர் N. சுரேஷ்',
-  qualifications: 'MBA., D.Astro.,',
+  logoUrl: 'https://res.cloudinary.com/hifi11courses/image/upload/v1790360838/ChatGPT_Image_Sep_25_2026_11_56_57_PM_ra1bkv.png',
+  astrologer: 'N. SURESH',
+  qualifications: 'B.Sc., MBA., D.Astro.',
+  astrologerFullName: 'N. SURESH B.Sc., MBA., D.Astro.',
+  astrologerImage: ASTROLOGER_PROFILE.imageUrl,
+  titles: ASTROLOGER_PROFILE.titles,
+  titleRow1: ASTROLOGER_PROFILE.titleRow1,
+  titleRow2: ASTROLOGER_PROFILE.titleRow2,
   govReg: '162/2022',
   phones: ['80981 03070', '86672 45331'],
   primaryPhone: '8098103070',
@@ -13,6 +70,7 @@ export const BUSINESS_INFO = {
   whatsapp: '918098103070',
   timing: 'காலை 9:00 முதல் இரவு 8:00 வரை (அனைத்து நாட்களும்)',
   addressText: 'ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையம், தமிழ்நாடு, இந்தியா.',
+  socialMedia: SOCIAL_MEDIA,
 };
 
 export const SERVICES: ServiceItem[] = [

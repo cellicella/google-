@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Sparkles, X, Eye } from 'lucide-react';
-import { GALLERY_ITEMS } from '../data/astrologyData';
+import { Sparkles, X, Eye, Award } from 'lucide-react';
+import { GALLERY_ITEMS, ASTROLOGER_PROFILE } from '../data/astrologyData';
 import { GalleryItem } from '../types';
 import { DurgaAmmanEmblem, BrassVilakku, JadhagaKattamIcon, OlaichuvadiIcon, NagaDoshamIcon, ThirumanaPoruthamIcon } from '../components/ui/SacredIcons';
+import { AstrologerPortrait } from '../components/common/AstrologerPortrait';
 
 export const GalleryPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
@@ -75,6 +76,27 @@ export const GalleryPage: React.FC = () => {
       {/* Gallery Grid */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Featured Astrologer Portrait Spotlight */}
+          <div className="mb-12 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-[#FFFDF7] via-[#FFF9D6] to-[#FFFDF7] border-2 border-[#E5B523] shadow-xl flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+            <AstrologerPortrait size="lg" />
+            <div className="text-center sm:text-left space-y-2">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#74191A] text-[#FFD91A] text-xs font-bold shadow-xs">
+                <Award size={13} className="text-[#FFD91A]" />
+                <span>முதன்மை வேத கணித ஜோதிடர்</span>
+              </div>
+              <h2 className="font-heading text-2xl sm:text-3xl font-black text-[#74191A]">
+                {ASTROLOGER_PROFILE.name} <span className="font-mono text-sm sm:text-base font-bold text-[#8A5A0A]">({ASTROLOGER_PROFILE.qualifications})</span>
+              </h2>
+              <div className="font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A] space-y-0.5">
+                <p>{ASTROLOGER_PROFILE.titleRow1.join(' • ')}</p>
+                <p>{ASTROLOGER_PROFILE.titleRow2.join(' • ')}</p>
+              </div>
+              <p className="text-xs text-[#4A1012] font-serif-tamil pt-1 font-medium">
+                அரசு பதிவு எண்: <strong className="text-[#74191A]">{ASTROLOGER_PROFILE.govReg}</strong> · தமிழ்நாடு
+              </p>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {GALLERY_ITEMS.map((item) => (
               <div

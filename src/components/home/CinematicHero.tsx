@@ -1,7 +1,8 @@
 import React from 'react';
 import { Phone, MessageCircle, Calendar, Sparkles, ChevronDown, Award } from 'lucide-react';
 import { DurgaAmmanEmblem, BrassVilakku, JadhagaKattamIcon, OlaichuvadiIcon } from '../ui/SacredIcons';
-import { BUSINESS_INFO } from '../../data/astrologyData';
+import { BUSINESS_INFO, ASTROLOGER_PROFILE } from '../../data/astrologyData';
+import { AstrologerPortrait } from '../common/AstrologerPortrait';
 
 interface CinematicHeroProps {
   onOpenAppointment: () => void;
@@ -77,7 +78,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
         <div className="mb-4 relative group">
           <div className="absolute -inset-4 bg-white/60 rounded-full blur-xl animate-pulse" />
           <div className="relative transform hover:scale-105 transition-transform duration-300">
-            <DurgaAmmanEmblem size={96} className="filter drop-shadow-[0_8px_16px_rgba(116,25,26,0.35)]" />
+            <DurgaAmmanEmblem size={110} className="filter drop-shadow-[0_10px_24px_rgba(116,25,26,0.35)]" />
           </div>
         </div>
 
@@ -102,15 +103,45 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           "பாரம்பரிய வேத கணித ஜோதிட அறிவுடன் உங்கள் வாழ்க்கைப் பாதைக்கு வழிகாட்டுதல்"
         </p>
 
-        {/* Astrologer Designation Badge */}
-        <div className="mb-8 inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/90 border-2 border-[#74191A] shadow-md">
-          <div className="w-2.5 h-2.5 rounded-full bg-[#B52222] animate-ping" />
-          <span className="text-xs sm:text-sm font-extrabold text-[#74191A]">
-            {BUSINESS_INFO.astrologer}
-          </span>
-          <span className="text-xs text-[#74191A]/80 font-mono font-bold">
-            {BUSINESS_INFO.qualifications}
-          </span>
+        {/* Astrologer Designation Badge & Confirmed Titles */}
+        <div className="mb-6 w-full max-w-2xl mx-auto flex flex-col items-center">
+          <div className="mb-3">
+            <AstrologerPortrait size="md" />
+          </div>
+
+          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/95 border-2 border-[#74191A] shadow-md mb-2.5">
+            <div className="w-2.5 h-2.5 rounded-full bg-[#B52222] animate-ping" />
+            <span className="font-heading text-sm sm:text-base font-black text-[#74191A] tracking-wide">
+              {ASTROLOGER_PROFILE.name}
+            </span>
+            <span className="text-xs text-[#74191A] font-mono font-bold px-2 py-0.5 rounded bg-[#FFF4A8] border border-[#C9971A]/40">
+              {ASTROLOGER_PROFILE.qualifications}
+            </span>
+          </div>
+
+          {/* 2-row Tamil Titles in Golden Ribbon */}
+          <div className="text-center font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A] leading-relaxed px-4 py-2 rounded-xl bg-white/70 border border-[#E5B523]/50 backdrop-blur-xs shadow-xs">
+            <p className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
+              {ASTROLOGER_PROFILE.titleRow1.map((t, idx) => (
+                <React.Fragment key={t}>
+                  <span className="text-[#74191A] hover:text-[#B52222]">{t}</span>
+                  {idx < ASTROLOGER_PROFILE.titleRow1.length - 1 && (
+                    <span className="text-[#C9971A] font-bold select-none">•</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </p>
+            <p className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-0.5">
+              {ASTROLOGER_PROFILE.titleRow2.map((t, idx) => (
+                <React.Fragment key={t}>
+                  <span className="text-[#74191A] hover:text-[#B52222]">{t}</span>
+                  {idx < ASTROLOGER_PROFILE.titleRow2.length - 1 && (
+                    <span className="text-[#C9971A] font-bold select-none">•</span>
+                  )}
+                </React.Fragment>
+              ))}
+            </p>
+          </div>
         </div>
 
         {/* Traditional Astrology Desk Artifacts Showcase */}
@@ -151,9 +182,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           </div>
         </div>
 
-        {/* Primary Call-to-Actions adhering strictly to the user brief */}
-        {/* "CTA: Maroon background, white/yellow text" */}
-        {/* "Secondary CTA: transparent, maroon border, maroon text" */}
+        {/* Primary Call-to-Actions */}
         <div className="flex flex-col sm:flex-row items-center gap-4 justify-center w-full max-w-lg mb-6">
           <button
             onClick={onOpenAppointment}
@@ -196,7 +225,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
         {/* Scroll Indicator */}
         <button
           onClick={onExploreServices}
-          className="mt-8 text-[#74191A] hover:text-[#B52222] flex flex-col items-center gap-1 transition-colors text-xs font-semibold"
+          className="mt-8 text-[#74191A] hover:text-[#B52222] flex flex-col items-center gap-1 transition-colors text-xs font-semibold cursor-pointer"
         >
           <span>மேலும் அறிய கீழே உருட்டவும்</span>
           <ChevronDown size={18} className="animate-bounce" />
@@ -205,4 +234,3 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
     </section>
   );
 };
-

@@ -1,0 +1,49 @@
+/* Navbar & Child Box-Sizing & Breakpoints */
+.site-navbar,
+.site-navbar *,
+.site-navbar *::before,
+.site-navbar *::after {
+  box-sizing: border-box !important;
+}
+
+/* DESKTOP >= 1201px: Single-line [LOGO] [NAV] [SOCIAL] [CTA] */
+@media (min-width: 1201px) {
+  .navbar-desktop-container {
+    display: flex !important;
+    align-items: center !important;
+  }
+  .navbar-mobile-container {
+    display: none !important;
+  }
+  .navbar-social-group {
+    display: flex !important;
+  }
+}
+
+/* TABLET & MOBILE <= 1200px: Switch cleanly to compact header */
+@media (max-width: 1200px) {
+  .navbar-desktop-container {
+    display: none !important;
+  }
+  .navbar-mobile-container {
+    display: flex !important;
+    align-items: center !important;
+  }
+  .navbar-social-group {
+    display: none !important;
+  }
+}
+
+/* Tablet CTA next to Hamburger on 769px - 1200px */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .navbar-tablet-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-tablet-cta {
+    display: none !important;
+  }
+}

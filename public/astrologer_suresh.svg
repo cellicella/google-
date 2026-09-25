@@ -1,0 +1,298 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 960" width="800" height="960">
+  <defs>
+    <!-- Background Divine Soft Halo -->
+    <radialGradient id="haloGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#FFF9D6" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#FFECA0" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#FFFDF5" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Skin Gradients -->
+    <linearGradient id="skinBase" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5A678"/>
+      <stop offset="50%" stop-color="#CF8B5B"/>
+      <stop offset="100%" stop-color="#B56F3F"/>
+    </linearGradient>
+    <radialGradient id="faceGlow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#EAB388"/>
+      <stop offset="60%" stop-color="#CF8B5B"/>
+      <stop offset="100%" stop-color="#A85E32"/>
+    </radialGradient>
+    <linearGradient id="neckShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#8E4D26"/>
+      <stop offset="50%" stop-color="#AF6B3E"/>
+      <stop offset="100%" stop-color="#CF8B5B"/>
+    </linearGradient>
+
+    <!-- Hair Gradient -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2B231F"/>
+      <stop offset="30%" stop-color="#181311"/>
+      <stop offset="100%" stop-color="#0A0807"/>
+    </linearGradient>
+
+    <!-- White Shirt Folds & Shading -->
+    <linearGradient id="shirtBody" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#F9FAFB"/>
+      <stop offset="75%" stop-color="#EEF1F4"/>
+      <stop offset="100%" stop-color="#E2E6EA"/>
+    </linearGradient>
+    <linearGradient id="shirtShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#DCE1E7"/>
+      <stop offset="50%" stop-color="#F5F7FA"/>
+      <stop offset="100%" stop-color="#D1D7DE"/>
+    </linearGradient>
+
+    <!-- Gold Gradients -->
+    <linearGradient id="richGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF6B3"/>
+      <stop offset="25%" stop-color="#FFDA33"/>
+      <stop offset="60%" stop-color="#D4A017"/>
+      <stop offset="100%" stop-color="#8C6307"/>
+    </linearGradient>
+    <linearGradient id="goldChain" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFDF4D"/>
+      <stop offset="50%" stop-color="#C9971A"/>
+      <stop offset="100%" stop-color="#FFE570"/>
+    </linearGradient>
+    <radialGradient id="rudrakshaGrad" cx="40%" cy="35%" r="60%">
+      <stop offset="0%" stop-color="#8E4624"/>
+      <stop offset="50%" stop-color="#592811"/>
+      <stop offset="100%" stop-color="#301305"/>
+    </radialGradient>
+
+    <!-- Emerald Green Watch Dial -->
+    <radialGradient id="emeraldDial" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#18844F"/>
+      <stop offset="60%" stop-color="#0E5431"/>
+      <stop offset="100%" stop-color="#062A17"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background Soft Aura Glow -->
+  <circle cx="400" cy="380" r="360" fill="url(#haloGlow)"/>
+
+  <!-- ==================== BODY & WHITE SHIRT ==================== -->
+  <g id="shirt-and-arms">
+    <!-- Main Torso Shirt Silhouette -->
+    <path d="M110 960 L140 680 C160 560 230 490 320 480 C360 478 440 478 480 480 C570 490 640 560 660 680 L690 960 Z"
+          fill="url(#shirtBody)" stroke="#D3D9E0" stroke-width="1.5"/>
+
+    <!-- Right Shoulder / Arm Sleeves (Viewer's Left) -->
+    <path d="M140 680 C110 740 70 820 60 900 C60 920 80 940 140 930 C200 920 280 830 320 740 L260 690 Z"
+          fill="url(#shirtBody)" stroke="#D3D9E0" stroke-width="1.5"/>
+    <!-- Left Shoulder / Arm Sleeves (Viewer's Right) -->
+    <path d="M660 680 C690 740 730 820 740 900 C740 920 720 940 660 930 C600 920 520 830 480 740 L540 690 Z"
+          fill="url(#shirtBody)" stroke="#D3D9E0" stroke-width="1.5"/>
+
+    <!-- Realistic Fabric Wrinkles & Folds on Sleeves -->
+    <path d="M150 720 C200 750 250 780 290 820" fill="none" stroke="#D0D7DF" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <path d="M120 780 C160 820 220 860 270 880" fill="none" stroke="#D0D7DF" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+    <path d="M650 720 C600 750 550 780 510 820" fill="none" stroke="#D0D7DF" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+    <path d="M680 780 C640 820 580 860 530 880" fill="none" stroke="#D0D7DF" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+
+    <!-- Left Breast Pocket (Viewer's Right) -->
+    <path d="M510 600 L590 600 L590 680 C590 700 580 710 550 710 C520 710 510 700 510 680 Z"
+          fill="#FFFFFF" stroke="#CFD7DF" stroke-width="2"/>
+    <line x1="510" y1="620" x2="590" y2="620" stroke="#CFD7DF" stroke-width="1.5"/>
+
+    <!-- Center Button Placket -->
+    <rect x="384" y="550" width="32" height="410" fill="url(#shirtShadow)" stroke="#CFD7DF" stroke-width="1.5"/>
+    <circle cx="400" cy="630" r="6" fill="#FFFFFF" stroke="#AFB8C2" stroke-width="1.8"/>
+    <circle cx="400" cy="710" r="6" fill="#FFFFFF" stroke="#AFB8C2" stroke-width="1.8"/>
+    <circle cx="400" cy="800" r="6" fill="#FFFFFF" stroke="#AFB8C2" stroke-width="1.8"/>
+    <circle cx="400" cy="890" r="6" fill="#FFFFFF" stroke="#AFB8C2" stroke-width="1.8"/>
+  </g>
+
+  <!-- ==================== NECK & CHEST ==================== -->
+  <g id="neck-and-chest">
+    <!-- Neck Base -->
+    <path d="M340 430 L340 540 C370 560 430 560 460 540 L460 430 Z" fill="url(#neckShadow)"/>
+    <path d="M350 440 L350 530 C380 545 420 545 450 530 L450 440 Z" fill="url(#skinBase)"/>
+
+    <!-- Exposed Upper Chest at Open Collar -->
+    <path d="M360 490 L400 580 L440 490 Z" fill="url(#neckShadow)"/>
+    <path d="M370 495 L400 570 L430 495 Z" fill="url(#skinBase)"/>
+
+    <!-- Subtle Modest Chest Hair -->
+    <path d="M395 520 Q400 530 405 525 M392 535 Q398 545 402 538 M403 540 Q406 550 400 555"
+          stroke="#30241E" stroke-width="1.2" fill="none" opacity="0.55"/>
+
+    <!-- Gold Chain & Rudraksha Bead -->
+    <path d="M345 480 Q400 565 455 480" fill="none" stroke="url(#richGold)" stroke-width="3.5"/>
+    <path d="M350 485 Q400 558 450 485" fill="none" stroke="url(#goldChain)" stroke-width="2"/>
+    <!-- Rudraksha Pendant with Gold Caps -->
+    <g transform="translate(400, 545)">
+      <circle cx="0" cy="0" r="13" fill="url(#rudrakshaGrad)" stroke="url(#richGold)" stroke-width="2.5"/>
+      <!-- Rudraksha Texture Grooves -->
+      <path d="M-8 -6 C-2 -2 -2 2 -8 6 M-2 -10 C2 -3 2 3 -2 10 M5 -8 C8 -2 8 2 5 8"
+            stroke="#FFDA33" stroke-width="1.2" fill="none" opacity="0.6"/>
+      <circle cx="-13" cy="0" r="4" fill="url(#richGold)"/>
+      <circle cx="13" cy="0" r="4" fill="url(#richGold)"/>
+    </g>
+
+    <!-- Crisp White Shirt Collar (Points open naturally) -->
+    <!-- Right Collar (Viewer's Left) -->
+    <path d="M330 470 L250 545 L385 530 L360 470 Z" fill="#FFFFFF" stroke="#D3D9E0" stroke-width="2"/>
+    <!-- Left Collar (Viewer's Right) -->
+    <path d="M470 470 L550 545 L415 530 L440 470 Z" fill="#FFFFFF" stroke="#D3D9E0" stroke-width="2"/>
+  </g>
+
+  <!-- ==================== HEAD, FACE & FEATURES ==================== -->
+  <g id="head-and-face">
+    <!-- Ears -->
+    <path d="M280 280 C265 250 265 330 285 355 C295 365 305 355 300 335 Z"
+          fill="#C27E4E" stroke="#8E4D26" stroke-width="1.5"/>
+    <path d="M285 295 C275 305 280 335 290 340" fill="none" stroke="#8E4D26" stroke-width="1.5"/>
+    <path d="M520 280 C535 250 535 330 515 355 C505 365 495 355 500 335 Z"
+          fill="#C27E4E" stroke="#8E4D26" stroke-width="1.5"/>
+    <path d="M515 295 C525 305 520 335 510 340" fill="none" stroke="#8E4D26" stroke-width="1.5"/>
+
+    <!-- Face Contour -->
+    <path d="M295 240 C285 130 515 130 505 240 C500 330 470 450 400 455 C330 450 300 330 295 240 Z"
+          fill="url(#faceGlow)"/>
+
+    <!-- Hair (Lush black styled volume) -->
+    <path d="M285 235 C275 120 340 75 405 75 C475 75 525 120 515 235 C500 175 465 140 400 140 C340 140 305 175 285 235 Z"
+          fill="url(#hairGrad)"/>
+    <path d="M295 230 C288 170 325 110 400 105 C475 110 512 170 505 230 C490 155 455 125 400 125 C345 125 310 155 295 230 Z"
+          fill="#14100E"/>
+    <!-- Hair Waves Texture -->
+    <path d="M330 115 C370 95 430 95 470 115 M320 140 C360 120 440 120 480 140"
+          fill="none" stroke="#3D322B" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+
+    <!-- ==================== SACRED VIBHUTI & TILAK ==================== -->
+    <g id="sacred-thiruneeru-vibhuti">
+      <!-- 3 Holy White Ash Stripes across forehead -->
+      <path d="M335 180 C360 176 440 176 465 180 C472 181 472 187 465 188 C440 184 360 184 335 188 C328 187 328 181 335 180 Z"
+            fill="#FFFFFF" opacity="0.95" filter="drop-shadow(0 1px 2px rgba(0,0,0,0.15))"/>
+      <path d="M338 192 C362 188 438 188 462 192 C469 193 469 199 462 200 C438 196 362 196 338 200 C331 199 331 193 338 192 Z"
+            fill="#FFFFFF" opacity="0.95"/>
+      <path d="M342 204 C365 200 435 200 458 204 C465 205 465 211 458 212 C435 208 365 208 342 212 C335 211 335 205 342 204 Z"
+            fill="#FFFFFF" opacity="0.95"/>
+
+      <!-- Golden Sandal Paste Crescent & Bright Red Kumkum Dot -->
+      <g transform="translate(400, 196)">
+        <!-- Sandal crescent mark -->
+        <path d="M-12 5 Q0 12 12 5 Q0 16 -12 5 Z" fill="url(#richGold)"/>
+        <!-- Red round Kumkum Bindi -->
+        <circle cx="0" cy="0" r="6.5" fill="#B51A1A" stroke="#FFE066" stroke-width="1"/>
+        <circle cx="-1.5" cy="-1.5" r="2" fill="#E53935" opacity="0.8"/>
+      </g>
+    </g>
+
+    <!-- Eyebrows -->
+    <path d="M320 235 C345 224 375 227 388 235" stroke="#1A1412" stroke-width="6" stroke-linecap="round" fill="none"/>
+    <path d="M480 235 C455 224 425 227 412 235" stroke="#1A1412" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+    <!-- Eyes (Warm, Kind, Smiling) -->
+    <!-- Right Eye (Viewer's Left) -->
+    <g transform="translate(355, 255)">
+      <ellipse cx="0" cy="0" rx="16" ry="9" fill="#FFFFFF"/>
+      <ellipse cx="1" cy="0" rx="8.5" ry="8.5" fill="#2A1810"/>
+      <circle cx="2" cy="-1" r="3" fill="#000000"/>
+      <circle cx="4" cy="-3" r="1.8" fill="#FFFFFF"/>
+      <!-- Eyelids & Gentle Smile Crinkles -->
+      <path d="M-18 -2 C-10 -10 10 -10 18 -2" stroke="#1A1412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M-16 2 C-8 10 8 10 16 2" stroke="#8E4D26" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M17 -4 C22 -2 24 2 24 6" stroke="#8E4D26" stroke-width="1.2" fill="none" opacity="0.5"/>
+    </g>
+    <!-- Left Eye (Viewer's Right) -->
+    <g transform="translate(445, 255)">
+      <ellipse cx="0" cy="0" rx="16" ry="9" fill="#FFFFFF"/>
+      <ellipse cx="-1" cy="0" rx="8.5" ry="8.5" fill="#2A1810"/>
+      <circle cx="-2" cy="-1" r="3" fill="#000000"/>
+      <circle cx="-4" cy="-3" r="1.8" fill="#FFFFFF"/>
+      <!-- Eyelids & Gentle Smile Crinkles -->
+      <path d="M-18 -2 C-10 -10 10 -10 18 -2" stroke="#1A1412" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <path d="M-16 2 C-8 10 8 10 16 2" stroke="#8E4D26" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M-17 -4 C-22 -2 -24 2 -24 6" stroke="#8E4D26" stroke-width="1.2" fill="none" opacity="0.5"/>
+    </g>
+
+    <!-- Nose -->
+    <path d="M400 230 L400 300 C400 312 388 316 382 314 C392 322 408 322 418 314 C412 316 400 312 400 300 Z"
+          fill="#B56F3F" stroke="#8E4D26" stroke-width="1.5" stroke-linejoin="round"/>
+    <ellipse cx="388" cy="314" rx="4" ry="2.5" fill="#5A2D14" opacity="0.6"/>
+    <ellipse cx="412" cy="314" rx="4" ry="2.5" fill="#5A2D14" opacity="0.6"/>
+
+    <!-- Warm Smiling Lips -->
+    <g transform="translate(400, 345)">
+      <path d="M-30 -2 C-12 18 12 18 30 -2" stroke="#7A2525" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M-26 -2 C-10 12 10 12 26 -2 C10 6 -10 6 -26 -2 Z" fill="#D16B6B" opacity="0.8"/>
+      <!-- Slightly visible healthy teeth in warm smile -->
+      <path d="M-15 0 Q0 6 15 0" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.9"/>
+    </g>
+
+    <!-- Neatly Groomed Beard & Mustache -->
+    <g id="beard-and-mustache">
+      <!-- Mustache curving over lips -->
+      <path d="M360 328 C382 322 396 332 400 336 C404 332 418 322 440 328 C424 346 406 348 400 340 C394 348 376 346 360 328 Z"
+            fill="url(#hairGrad)"/>
+      <!-- Full Trimmed Beard along chin & jawline -->
+      <path d="M315 310 C310 400 355 450 400 452 C445 450 490 400 485 310 C475 365 445 430 400 430 C355 430 325 365 315 310 Z"
+            fill="url(#hairGrad)"/>
+      <!-- Soft texture lines on beard -->
+      <path d="M370 410 Q400 435 430 410 M360 380 Q400 415 440 380"
+            fill="none" stroke="#1F1815" stroke-width="2" opacity="0.7"/>
+    </g>
+  </g>
+
+  <!-- ==================== HANDS IN NAMASTE (ANJALI MUDRA) ==================== -->
+  <g id="namaste-folded-hands">
+    <!-- Right Wrist with Heavy Gold Bracelet / Kada (Viewer's Left) -->
+    <g transform="translate(315, 830)">
+      <!-- Gold Bracelet Links -->
+      <rect x="-25" y="-15" width="50" height="30" rx="8" fill="url(#richGold)" stroke="#8C6307" stroke-width="2"/>
+      <circle cx="-12" cy="0" r="5" fill="#FFF6B3"/>
+      <circle cx="0" cy="0" r="6" fill="#FFE066" stroke="#B8860B" stroke-width="1.5"/>
+      <circle cx="12" cy="0" r="5" fill="#FFF6B3"/>
+    </g>
+
+    <!-- Left Wrist with Luxury Gold Watch & Emerald Green Dial (Viewer's Right) -->
+    <g transform="translate(485, 830)">
+      <!-- Gold Watch Strap -->
+      <rect x="-28" y="-16" width="56" height="32" rx="6" fill="url(#richGold)" stroke="#8C6307" stroke-width="2"/>
+      <!-- Circular Watch Case -->
+      <circle cx="0" cy="0" r="22" fill="url(#richGold)" stroke="#664604" stroke-width="2"/>
+      <!-- Emerald Green Circular Dial -->
+      <circle cx="0" cy="0" r="16" fill="url(#emeraldDial)" stroke="#FFDA33" stroke-width="1.5"/>
+      <!-- Gold Watch Hands & Hour Markers -->
+      <circle cx="0" cy="0" r="2.5" fill="#FFDA33"/>
+      <line x1="0" y1="0" x2="0" y2="-9" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <line x1="0" y1="0" x2="7" y2="4" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"/>
+      <circle cx="0" cy="-12" r="1" fill="#FFF"/>
+      <circle cx="12" cy="0" r="1" fill="#FFF"/>
+      <circle cx="0" cy="12" r="1" fill="#FFF"/>
+      <circle cx="-12" cy="0" r="1" fill="#FFF"/>
+    </g>
+
+    <!-- Folded Hands Silhouette -->
+    <!-- Palms pressed together pointing upward to chin level -->
+    <path d="M360 840 C340 760 375 640 400 580 C425 640 460 760 440 840 C420 865 380 865 360 840 Z"
+          fill="url(#faceGlow)" stroke="#8E4D26" stroke-width="2.5"/>
+
+    <!-- Finger Separations & Natural Shading -->
+    <!-- Left Hand Fingers (Viewer's Left) -->
+    <path d="M385 610 L380 720" stroke="#8E4D26" stroke-width="2" stroke-linecap="round"/>
+    <path d="M372 650 L368 760" stroke="#8E4D26" stroke-width="2" stroke-linecap="round"/>
+    <path d="M360 700 L358 790" stroke="#8E4D26" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Right Hand Fingers (Viewer's Right) -->
+    <path d="M415 610 L420 720" stroke="#8E4D26" stroke-width="2" stroke-linecap="round"/>
+    <path d="M428 650 L432 760" stroke="#8E4D26" stroke-width="2" stroke-linecap="round"/>
+    <path d="M440 700 L442 790" stroke="#8E4D26" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Center Palm Contact Line -->
+    <line x1="400" y1="585" x2="400" y2="820" stroke="#703918" stroke-width="2.8" stroke-linecap="round"/>
+
+    <!-- Gold Rings on Fingers -->
+    <!-- Gold Ring on Ring Finger (Viewer's Left) -->
+    <ellipse cx="368" cy="725" rx="7" ry="4" fill="url(#richGold)" stroke="#8C6307" stroke-width="1.2"/>
+    <!-- Gold Ring on Little Finger (Viewer's Left) -->
+    <ellipse cx="356" cy="760" rx="6" ry="3.5" fill="url(#richGold)" stroke="#8C6307" stroke-width="1.2"/>
+    <!-- Gold Ring on Left Hand (Viewer's Right) -->
+    <ellipse cx="432" cy="725" rx="7" ry="4" fill="url(#richGold)" stroke="#8C6307" stroke-width="1.2"/>
+  </g>
+</svg>

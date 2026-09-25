@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Play, Sparkles, Clock, Calendar, X } from 'lucide-react';
-import { VIDEOS } from '../data/astrologyData';
+import { Play, Sparkles, Clock, Calendar, X, ExternalLink } from 'lucide-react';
+import { VIDEOS, BUSINESS_INFO, ASTROLOGER_PROFILE } from '../data/astrologyData';
+import { YouTubeIcon } from '../components/common/SocialMediaBar';
 import { VideoItem } from '../types';
 
 export const VideosPage: React.FC = () => {
   const [selectedVideo, setSelectedVideo] = useState<VideoItem | null>(null);
+  const ytConfig = BUSINESS_INFO.socialMedia.youtube;
 
   return (
     <div className="bg-gradient-to-b from-[#FFFBEA] via-[#FFF8D6] to-[#FFF4A8] text-[#1B0D09]">
@@ -16,12 +18,26 @@ export const VideosPage: React.FC = () => {
             <Sparkles size={14} className="text-[#C9971A]" />
             <span>காணொளி வழிகாட்டல்</span>
           </div>
-          <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-[#74191A] mb-4">
+          <h1 className="font-heading text-3xl sm:text-5xl font-extrabold text-[#74191A] mb-3">
             ஜோதிட அறிவும் வழிகாட்டுதலும்
           </h1>
-          <p className="max-w-2xl mx-auto text-xs sm:text-base text-[#4A1012] font-serif-tamil font-medium leading-relaxed">
-            கிரக நிலைகள், திருமண தோஷ நிவர்த்தி மற்றும் கைரேகை ரகசியங்கள் குறித்த கணித ஜோதிடர் N. சுரேஷ் அவர்களின் விளக்கம்.
+          <p className="max-w-2xl mx-auto text-xs sm:text-base text-[#4A1012] font-serif-tamil font-medium leading-relaxed mb-4">
+            கிரக நிலைகள், திருமண தோஷ நிவர்த்தி மற்றும் கைரேகை ரகசியங்கள் குறித்த {ASTROLOGER_PROFILE.fullName} அவர்களின் விளக்கம்.
           </p>
+
+          {/* YouTube Official Channel Button */}
+          <div className="inline-flex items-center gap-2">
+            <a
+              href={ytConfig.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#74191A] hover:bg-[#5C1314] text-[#FFD91A] font-bold text-xs shadow-md border border-[#FFD91A]/40 transition-transform active:scale-95 cursor-pointer"
+            >
+              <YouTubeIcon size={18} className="text-[#FFD91A]" />
+              <span>YouTube: {ytConfig.handle}</span>
+              <ExternalLink size={13} />
+            </a>
+          </div>
         </div>
       </section>
 

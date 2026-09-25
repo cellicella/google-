@@ -94,3 +94,24 @@ export interface ContactFormData {
   subject: string;
   message: string;
 }
+
+export type SocialPlatformId = 'instagram' | 'youtube' | 'facebook' | 'telegram';
+
+export interface SocialMediaConfig {
+  id: SocialPlatformId;
+  platform: string;
+  tamilName: string;
+  handle: string;
+  url: string; // If non-empty, the icon is clickable. If empty, it's non-clickable
+}
+
+export interface AstrologerProfile {
+  name: string;
+  qualifications: string;
+  fullName: string;
+  imageUrl: string;
+  titles: string[];
+  titleRow1: string[];
+  titleRow2: string[];
+  govReg: string;
+}

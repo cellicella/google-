@@ -7,6 +7,7 @@ import { AstrologerIntro } from '../components/home/AstrologerIntro';
 import { ServiceHighlights } from '../components/home/ServiceHighlights';
 import { ARTICLES, FAQS, BUSINESS_INFO } from '../data/astrologyData';
 import { Calendar, Phone, ArrowRight, HelpCircle, BookOpen, MessageCircle } from 'lucide-react';
+import { CtaSocialStrip } from '../components/common/SocialMediaBar';
 
 interface HomePageProps {
   onNavigate: (path: string) => void;
@@ -189,6 +190,11 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
               <Phone size={16} />
               <span>அழைக்க: 80981 03070</span>
             </a>
+          </div>
+
+          {/* Social Media Channels Strip */}
+          <div className="mt-10 pt-6 border-t border-[#74191A]/30">
+            <CtaSocialStrip />
           </div>
         </div>
       </section>

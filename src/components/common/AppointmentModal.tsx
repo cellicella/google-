@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { X, Calendar, Clock, MapPin, User, Phone, Mail, HelpCircle, CheckCircle, AlertCircle, Loader2, Sparkles, MessageCircle } from 'lucide-react';
 import { AppointmentFormData } from '../../types';
-import { SERVICES, BUSINESS_INFO } from '../../data/astrologyData';
+import { SERVICES, BUSINESS_INFO, ASTROLOGER_PROFILE } from '../../data/astrologyData';
 import { apiService } from '../../services/api';
+import { AstrologerPortrait } from './AstrologerPortrait';
 
 interface AppointmentModalProps {
   isOpen: boolean;
@@ -84,15 +85,18 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/75 backdrop-blur-sm overflow-y-auto">
       <div className="relative w-full max-w-2xl bg-[#FFFDF5] rounded-2xl shadow-2xl border-2 border-[#74191A] my-6 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
-        <div className="bg-[#FFD91A] px-6 py-4 border-b-2 border-[#74191A]/20 flex items-center justify-between text-[#74191A]">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#74191A] animate-ping" />
+        <div className="bg-[#FFD91A] px-5 sm:px-6 py-3.5 border-b-2 border-[#74191A]/20 flex items-center justify-between text-[#74191A]">
+          <div className="flex items-center gap-3">
+            <AstrologerPortrait size="xs" className="shrink-0" />
             <div>
-              <h3 className="font-heading text-lg sm:text-xl font-extrabold text-[#74191A]">
+              <h3 className="font-heading text-base sm:text-xl font-extrabold text-[#74191A] leading-tight">
                 ஜோதிட ஆலோசனை பெறுங்கள்
               </h3>
-              <p className="text-xs text-[#74191A]/80 font-bold">
-                {BUSINESS_INFO.astrologer} · {BUSINESS_INFO.qualifications}
+              <p className="text-xs text-[#74191A] font-bold">
+                {ASTROLOGER_PROFILE.name} <span className="font-mono">{ASTROLOGER_PROFILE.qualifications}</span>
+              </p>
+              <p className="text-[10px] text-[#74191A]/80 font-serif-tamil font-semibold hidden sm:block">
+                {ASTROLOGER_PROFILE.titleRow1.slice(0, 2).join(' • ')} • {ASTROLOGER_PROFILE.titleRow2[2]}
               </p>
             </div>
           </div>

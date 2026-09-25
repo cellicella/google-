@@ -1,7 +1,9 @@
 import React from 'react';
-import { Calendar, Phone, ShieldCheck, Award, CheckCircle2 } from 'lucide-react';
+import { Calendar, Phone, ShieldCheck, Award, CheckCircle2, Sparkles, MessageCircle } from 'lucide-react';
 import { DurgaAmmanEmblem, JadhagaKattamIcon } from '../ui/SacredIcons';
-import { BUSINESS_INFO } from '../../data/astrologyData';
+import { ASTROLOGER_PROFILE, BUSINESS_INFO } from '../../data/astrologyData';
+import { AstrologerTitles } from '../common/AstrologerTitles';
+import { AstrologerPortrait } from '../common/AstrologerPortrait';
 
 interface AstrologerIntroProps {
   onOpenAppointment: () => void;
@@ -19,47 +21,28 @@ export const AstrologerIntro: React.FC<AstrologerIntroProps> = ({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left: Dignified Astrologer Portrait & Sacred Badge */}
+          {/* Left: Dignified Astrologer Sacred Card with Big Suresh Image */}
           <div className="lg:col-span-5 relative flex justify-center">
-            {/* Outer Luxury Gold Border Frame */}
-            <div className="relative p-2.5 rounded-3xl bg-gradient-to-b from-[#FFD91A] via-[#C9971A] to-[#74191A] shadow-2xl max-w-sm w-full">
+            {/* Luxury Gold Border Frame */}
+            <div className="relative p-3 rounded-3xl bg-gradient-to-b from-[#FFD91A] via-[#C9971A] to-[#74191A] shadow-2xl max-w-md w-full">
               <div className="bg-[#74191A] rounded-[22px] p-6 text-center text-[#FFFDF5] relative overflow-hidden border border-[#FFD91A]/30">
                 {/* Background Astrology Chart watermark */}
                 <div className="absolute -top-10 -right-10 opacity-15 pointer-events-none">
-                  <JadhagaKattamIcon size={200} />
+                  <JadhagaKattamIcon size={220} className="text-[#FFD91A]" />
                 </div>
 
-                {/* Dignified Avatar Medallion */}
-                <div className="relative w-44 h-44 mx-auto mb-6 rounded-full p-2 bg-gradient-to-tr from-[#74191A] via-[#FFD91A] to-white shadow-xl">
-                  <div className="w-full h-full rounded-full bg-[#FFFDF5] flex flex-col items-center justify-center border-2 border-[#74191A] overflow-hidden relative shadow-inner">
-                    <DurgaAmmanEmblem size={90} />
-                    <span className="text-[10px] text-[#74191A] font-extrabold tracking-wider mt-1">
-                      வேத கணிதம்
-                    </span>
-                  </div>
+                {/* Big Astrologer Suresh Photo */}
+                <div className="mb-6 flex justify-center">
+                  <AstrologerPortrait size="2xl" showBadge={false} />
                 </div>
 
-                {/* Astrologer Name & Qualifications */}
-                <span className="text-xs font-bold text-[#FFD91A] uppercase tracking-wider block">
-                  நிறுவனர் & முதன்மை ஜோதிடர்
-                </span>
-                <h3 className="font-heading text-2xl font-bold text-[#FFFDF5] mt-1">
-                  {BUSINESS_INFO.astrologer}
-                </h3>
-                <p className="text-xs font-mono text-[#FFD91A] font-semibold mt-1">
-                  {BUSINESS_INFO.qualifications}
-                </p>
-
-                {/* Government Registration Badge */}
-                <div className="mt-5 pt-4 border-t border-[#FFD91A]/30 flex items-center justify-center gap-2 text-xs text-[#FFFDF5]">
-                  <ShieldCheck size={16} className="text-[#FFD91A]" />
-                  <span>அரசு பதிவு எண்: <strong className="text-[#FFD91A]">{BUSINESS_INFO.govReg}</strong></span>
-                </div>
+                {/* Astrologer Name, Qualifications & Confirmed Titles */}
+                <AstrologerTitles variant="card" showGovReg={true} />
               </div>
             </div>
           </div>
 
-          {/* Right: Editorial Narrative */}
+          {/* Right: Editorial Narrative with Prominent Astrologer Banner */}
           <div className="lg:col-span-7 space-y-6">
             <div>
               <div className="inline-flex items-center gap-2 text-xs font-bold text-[#74191A] uppercase tracking-wider mb-2">
@@ -74,8 +57,54 @@ export const AstrologerIntro: React.FC<AstrologerIntroProps> = ({
               </p>
             </div>
 
+            {/* Prominent Editorial Astrologer Title Presentation */}
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/95 border-2 border-[#E5B523] shadow-md">
+              <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E5B523]/40 pb-2 mb-3">
+                <div className="flex items-center gap-2">
+                  <Sparkles size={16} className="text-[#C9971A]" />
+                  <span className="font-heading text-base sm:text-lg font-black text-[#74191A]">
+                    {ASTROLOGER_PROFILE.name}
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#74191A] text-[#FFD91A] font-mono text-xs font-bold">
+                    {ASTROLOGER_PROFILE.qualifications}
+                  </span>
+                </div>
+                <span className="text-[11px] text-[#8A5A0A] font-bold">
+                  அரசு பதிவு: {ASTROLOGER_PROFILE.govReg}
+                </span>
+              </div>
+
+              {/* 2-row Tamil Titles in Premium Typography */}
+              <div className="space-y-1.5 font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A]">
+                <p className="flex flex-wrap items-center gap-2">
+                  {ASTROLOGER_PROFILE.titleRow1.map((t, idx) => (
+                    <React.Fragment key={t}>
+                      <span className="px-2 py-0.5 rounded bg-[#FFF8D6] border border-[#E5C358]/50">
+                        {t}
+                      </span>
+                      {idx < ASTROLOGER_PROFILE.titleRow1.length - 1 && (
+                        <span className="text-[#C9971A] font-bold select-none">•</span>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </p>
+                <p className="flex flex-wrap items-center gap-2">
+                  {ASTROLOGER_PROFILE.titleRow2.map((t, idx) => (
+                    <React.Fragment key={t}>
+                      <span className="px-2 py-0.5 rounded bg-[#FFF8D6] border border-[#E5C358]/50">
+                        {t}
+                      </span>
+                      {idx < ASTROLOGER_PROFILE.titleRow2.length - 1 && (
+                        <span className="text-[#C9971A] font-bold select-none">•</span>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </p>
+              </div>
+            </div>
+
             {/* Core Commitments */}
-            <div className="space-y-3 pt-2">
+            <div className="space-y-3 pt-1">
               <div className="flex items-start gap-3 p-4 rounded-xl bg-white/90 border border-[#C9971A]/40 shadow-sm">
                 <CheckCircle2 size={18} className="text-[#74191A] mt-0.5 flex-shrink-0" />
                 <div>
@@ -117,15 +146,27 @@ export const AstrologerIntro: React.FC<AstrologerIntroProps> = ({
             <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
               <button
                 onClick={onOpenAppointment}
-                className="w-full sm:w-auto bg-[#74191A] hover:bg-[#5C1314] text-[#FFD91A] font-extrabold text-xs sm:text-sm px-7 py-3 rounded-xl flex items-center justify-center gap-2 border border-[#C9971A] shadow-md transition-all active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto bg-[#74191A] hover:bg-[#5C1314] text-[#FFD91A] font-extrabold text-xs sm:text-sm px-7 py-3.5 rounded-xl flex items-center justify-center gap-2 border border-[#C9971A] shadow-md transition-all active:scale-95 cursor-pointer"
               >
                 <Calendar size={16} />
                 <span>ஆலோசனை பெறுங்கள்</span>
               </button>
 
+              <a
+                href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(
+                  'வணக்கம், ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையத்தில் ஆலோசனை பெற விரும்புகிறேன்.'
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm transition-all active:scale-95 cursor-pointer"
+              >
+                <MessageCircle size={16} className="text-white fill-white" />
+                <span>WhatsApp மூலம் தொடர்பு</span>
+              </a>
+
               <button
                 onClick={onNavigateAbout}
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white hover:bg-[#FFFDF5] text-[#74191A] border-2 border-[#74191A] text-xs sm:text-sm font-bold transition-all text-center active:scale-95 cursor-pointer"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white hover:bg-[#FFFDF5] text-[#74191A] border-2 border-[#74191A] text-xs sm:text-sm font-bold transition-all text-center active:scale-95 cursor-pointer"
               >
                 மேலும் விபரம் அறிய
               </button>
