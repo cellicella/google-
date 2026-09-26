@@ -32,6 +32,12 @@ export const TelegramIcon: React.FC<{ size?: number; className?: string }> = ({ 
   </svg>
 );
 
+export const WhatsAppChannelIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  </svg>
+);
+
 const PlatformIcon: React.FC<{ id: SocialPlatformId; size?: number; className?: string }> = ({ id, size = 18, className = '' }) => {
   switch (id) {
     case 'instagram':
@@ -42,6 +48,8 @@ const PlatformIcon: React.FC<{ id: SocialPlatformId; size?: number; className?: 
       return <FacebookIcon size={size} className={className} />;
     case 'telegram':
       return <TelegramIcon size={size} className={className} />;
+    case 'whatsapp_channel':
+      return <WhatsAppChannelIcon size={size} className={className} />;
     default:
       return null;
   }
@@ -52,6 +60,7 @@ const SOCIAL_ITEMS: SocialMediaConfig[] = [
   SOCIAL_MEDIA.youtube,
   SOCIAL_MEDIA.facebook,
   SOCIAL_MEDIA.telegram,
+  SOCIAL_MEDIA.whatsapp_channel,
 ];
 
 // 1. Header Compact Social Cluster (for single-row desktop navbar and header)

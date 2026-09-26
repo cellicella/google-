@@ -164,13 +164,29 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                   எந்த நேரத்திலும் எங்களை தொலைபேசி அல்லது வாட்ஸ்அப் வழியாக தொடர்பு கொள்ளலாம்.
                 </p>
 
-                <a
-                  href={`tel:${BUSINESS_INFO.primaryPhone}`}
-                  className="w-full py-3 px-4 rounded-xl bg-white text-[#74191A] text-xs font-extrabold flex items-center justify-center gap-2 hover:bg-[#FFFDF5] shadow transition-colors"
-                >
-                  <Phone size={15} className="text-[#74191A]" />
-                  <span>80981 03070-ஐ அழைக்க</span>
-                </a>
+                <div className="space-y-1.5">
+                  <a
+                    href={`tel:${BUSINESS_INFO.primaryPhone}`}
+                    className="w-full py-2.5 px-3 rounded-xl bg-white text-[#74191A] text-xs font-extrabold flex items-center justify-center gap-2 hover:bg-[#FFFDF5] shadow transition-colors"
+                  >
+                    <Phone size={14} className="text-[#74191A]" />
+                    <span>{BUSINESS_INFO.primaryPhoneDisplay}</span>
+                  </a>
+                  <a
+                    href={`tel:${BUSINESS_INFO.secondaryPhone}`}
+                    className="w-full py-2.5 px-3 rounded-xl bg-white text-[#74191A] text-xs font-extrabold flex items-center justify-center gap-2 hover:bg-[#FFFDF5] shadow transition-colors"
+                  >
+                    <Phone size={14} className="text-[#74191A]" />
+                    <span>{BUSINESS_INFO.secondaryPhoneDisplay}</span>
+                  </a>
+                  <a
+                    href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
+                    className="w-full py-2.5 px-3 rounded-xl bg-white text-[#74191A] text-xs font-extrabold flex items-center justify-center gap-2 hover:bg-[#FFFDF5] shadow transition-colors"
+                  >
+                    <Phone size={14} className="text-[#74191A]" />
+                    <span>{BUSINESS_INFO.tertiaryPhoneDisplay}</span>
+                  </a>
+                </div>
 
                 <a
                   href={`https://wa.me/${BUSINESS_INFO.whatsapp}?text=${encodeURIComponent(`வணக்கம், ${service.title} சேவை தொடர்பாக ஆலோசனை பெற விரும்புகிறேன்.`)}`}

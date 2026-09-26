@@ -109,37 +109,51 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
             <AstrologerPortrait size="md" />
           </div>
 
-          <div className="inline-flex items-center gap-2.5 px-5 py-2 rounded-full bg-white/95 border-2 border-[#74191A] shadow-md mb-2.5">
-            <div className="w-2.5 h-2.5 rounded-full bg-[#B52222] animate-ping" />
-            <span className="font-heading text-sm sm:text-base font-black text-[#74191A] tracking-wide">
-              {ASTROLOGER_PROFILE.name}
-            </span>
-            <span className="text-xs text-[#74191A] font-mono font-bold px-2 py-0.5 rounded bg-[#FFF4A8] border border-[#C9971A]/40">
-              {ASTROLOGER_PROFILE.qualifications}
-            </span>
+          {/* Astrologer Designation Badge & Confirmed Titles */}
+          <div className="astrologer-hero-profile-card sm:inline-flex sm:items-center sm:gap-2.5 sm:px-5 sm:py-2 sm:rounded-full bg-[#FFFDF5] border-2 border-[#74191A] shadow-md mb-2.5">
+            <div className="hidden sm:block w-2.5 h-2.5 rounded-full bg-[#B52222] animate-ping shrink-0" />
+
+            {/* Column 1: N. SURESH */}
+            <div className="hero-col-item hero-col-name sm:flex-initial sm:w-auto sm:min-h-0 sm:block">
+              <div className="flex sm:hidden flex-col items-center justify-center text-center font-heading font-black text-[#74191A] tracking-tight leading-tight w-full h-full min-h-[52px]">
+                <span className="block text-[clamp(11.5px,3.2vw,14px)] font-black leading-none">N.</span>
+                <span className="block text-[clamp(11.5px,3.2vw,14px)] font-black tracking-wider mt-0.5 leading-none">SURESH</span>
+              </div>
+              <span className="hidden sm:inline font-heading text-sm sm:text-base font-black text-[#74191A] tracking-wide">
+                {ASTROLOGER_PROFILE.name}
+              </span>
+            </div>
+
+            {/* Column 2: B.Sc., MBA., D.Astro. */}
+            <div className="hero-col-item sm:flex-initial sm:w-auto sm:min-h-0 sm:block">
+              <div className="hero-qual-box sm:hidden font-mono font-bold text-[#74191A] text-[clamp(9.5px,2.6vw,11.5px)] leading-tight shadow-xs">
+                <span className="block leading-none">B.Sc.,</span>
+                <span className="block leading-none my-0.5">MBA.,</span>
+                <span className="block leading-none">D.Astro.</span>
+              </div>
+              <span className="hidden sm:inline-block text-xs text-[#74191A] font-mono font-bold px-2 py-0.5 rounded bg-[#FFF4A8] border border-[#C9971A]/40">
+                {ASTROLOGER_PROFILE.qualifications}
+              </span>
+            </div>
+
+            {/* Column 3: 12ம் தலைமுறை */}
+            <div className="hero-col-item sm:flex-initial sm:w-auto sm:min-h-0 sm:block">
+              <div className="hero-gen-badge sm:hidden font-serif-tamil text-[clamp(9.5px,2.6vw,11px)] leading-tight shadow-xs">
+                <span className="block font-black text-[#8A5A0A] leading-none mb-0.5">12ம்</span>
+                <span className="block font-bold text-[#74191A] leading-none">தலைமுறை</span>
+              </div>
+              <span className="hidden sm:inline-block text-[11px] font-bold text-[#8A5A0A] bg-[#FFF8D6] px-2.5 py-0.5 rounded-full border border-[#E5C358]/50">
+                {BUSINESS_INFO.generationText}
+              </span>
+            </div>
           </div>
 
-          {/* 2-row Tamil Titles in Golden Ribbon */}
-          <div className="text-center font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A] leading-relaxed px-4 py-2 rounded-xl bg-white/70 border border-[#E5B523]/50 backdrop-blur-xs shadow-xs">
-            <p className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
-              {ASTROLOGER_PROFILE.titleRow1.map((t, idx) => (
-                <React.Fragment key={t}>
-                  <span className="text-[#74191A] hover:text-[#B52222]">{t}</span>
-                  {idx < ASTROLOGER_PROFILE.titleRow1.length - 1 && (
-                    <span className="text-[#C9971A] font-bold select-none">•</span>
-                  )}
-                </React.Fragment>
-              ))}
-            </p>
-            <p className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mt-0.5">
-              {ASTROLOGER_PROFILE.titleRow2.map((t, idx) => (
-                <React.Fragment key={t}>
-                  <span className="text-[#74191A] hover:text-[#B52222]">{t}</span>
-                  {idx < ASTROLOGER_PROFILE.titleRow2.length - 1 && (
-                    <span className="text-[#C9971A] font-bold select-none">•</span>
-                  )}
-                </React.Fragment>
-              ))}
+          {/* Clean Astrologer Title in Golden Ribbon */}
+          <div className="text-center font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A] leading-relaxed px-5 py-2 rounded-xl bg-white/80 border border-[#E5B523]/50 backdrop-blur-xs shadow-xs">
+            <p className="flex items-center justify-center gap-2">
+              <span>பாரம்பரிய வேத கணித ஜோதிடர்</span>
+              <span className="text-[#C9971A] font-bold select-none">•</span>
+              <span>அரசு பதிவு எண்: {ASTROLOGER_PROFILE.govReg}</span>
             </p>
           </div>
         </div>
@@ -211,14 +225,21 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
             href={`tel:${BUSINESS_INFO.primaryPhone}`}
             className="text-[#74191A] underline decoration-[#74191A] font-extrabold hover:text-[#B52222]"
           >
-            80981 03070
+            {BUSINESS_INFO.primaryPhoneDisplay}
           </a>
           <span>·</span>
           <a
             href={`tel:${BUSINESS_INFO.secondaryPhone}`}
             className="text-[#74191A] underline decoration-[#74191A] font-extrabold hover:text-[#B52222]"
           >
-            86672 45331
+            {BUSINESS_INFO.secondaryPhoneDisplay}
+          </a>
+          <span>·</span>
+          <a
+            href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
+            className="text-[#74191A] underline decoration-[#74191A] font-extrabold hover:text-[#B52222]"
+          >
+            {BUSINESS_INFO.tertiaryPhoneDisplay}
           </a>
         </div>
 

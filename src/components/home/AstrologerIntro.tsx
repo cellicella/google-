@@ -60,13 +60,16 @@ export const AstrologerIntro: React.FC<AstrologerIntroProps> = ({
             {/* Prominent Editorial Astrologer Title Presentation */}
             <div className="p-4 sm:p-5 rounded-2xl bg-white/95 border-2 border-[#E5B523] shadow-md">
               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E5B523]/40 pb-2 mb-3">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 flex-wrap">
                   <Sparkles size={16} className="text-[#C9971A]" />
                   <span className="font-heading text-base sm:text-lg font-black text-[#74191A]">
                     {ASTROLOGER_PROFILE.name}
                   </span>
                   <span className="px-2.5 py-0.5 rounded-full bg-[#74191A] text-[#FFD91A] font-mono text-xs font-bold">
                     {ASTROLOGER_PROFILE.qualifications}
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#FFD91A] text-[#74191A] font-extrabold text-[11px] border border-[#E5B523] shadow-xs">
+                    {BUSINESS_INFO.generationText}
                   </span>
                 </div>
                 <span className="text-[11px] text-[#8A5A0A] font-bold">

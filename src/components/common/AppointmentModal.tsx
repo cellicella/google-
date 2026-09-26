@@ -93,10 +93,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                 ஜோதிட ஆலோசனை பெறுங்கள்
               </h3>
               <p className="text-xs text-[#74191A] font-bold">
-                {ASTROLOGER_PROFILE.name} <span className="font-mono">{ASTROLOGER_PROFILE.qualifications}</span>
-              </p>
-              <p className="text-[10px] text-[#74191A]/80 font-serif-tamil font-semibold hidden sm:block">
-                {ASTROLOGER_PROFILE.titleRow1.slice(0, 2).join(' • ')} • {ASTROLOGER_PROFILE.titleRow2[2]}
+                {ASTROLOGER_PROFILE.name} <span className="font-mono">{ASTROLOGER_PROFILE.qualifications}</span> · {BUSINESS_INFO.generationText}
               </p>
             </div>
           </div>
@@ -122,9 +119,21 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
               <p className="text-sm text-[#1B0D09]/80 max-w-md mx-auto leading-relaxed">
                 {successMessage}
               </p>
-              <div className="p-4 bg-[#F7EED8] rounded-xl border border-[#C9971A]/30 text-xs text-[#691719] space-y-1">
+              <div className="p-4 bg-[#F7EED8] rounded-xl border border-[#C9971A]/30 text-xs text-[#691719] space-y-2">
                 <p className="font-semibold">அவசர ஆலோசனை தேவைப்பட்டால் நேரடியாக அழைக்கலாம்:</p>
-                <p className="text-sm font-bold text-[#1B0D09]">80981 03070 / 86672 45331</p>
+                <div className="flex flex-wrap items-center justify-center gap-3 text-xs sm:text-sm font-bold text-[#1B0D09]">
+                  <a href={`tel:${BUSINESS_INFO.primaryPhone}`} className="hover:text-[#74191A] underline">
+                    {BUSINESS_INFO.primaryPhoneDisplay}
+                  </a>
+                  <span>·</span>
+                  <a href={`tel:${BUSINESS_INFO.secondaryPhone}`} className="hover:text-[#74191A] underline">
+                    {BUSINESS_INFO.secondaryPhoneDisplay}
+                  </a>
+                  <span>·</span>
+                  <a href={`tel:${BUSINESS_INFO.tertiaryPhone}`} className="hover:text-[#74191A] underline">
+                    {BUSINESS_INFO.tertiaryPhoneDisplay}
+                  </a>
+                </div>
               </div>
               <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
                 <button

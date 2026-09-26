@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MessageCircle, Clock, ShieldCheck, Sparkles, Award } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Clock, ShieldCheck, Sparkles, Award, MapPin } from 'lucide-react';
 import { DurgaAmmanEmblem } from '../ui/SacredIcons';
 import { BUSINESS_INFO, SERVICES, ASTROLOGER_PROFILE } from '../../data/astrologyData';
 import { FooterSocialSection } from '../common/SocialMediaBar';
@@ -34,9 +34,14 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
 
             {/* Premium Astrologer Credentials Box */}
             <div className="p-4 bg-[#4A1012]/60 rounded-2xl border border-[#C9971A]/40 shadow-sm space-y-2">
-              <div className="flex items-center gap-1.5 text-[#FFD91A]">
-                <Award size={14} />
-                <span className="text-[10px] font-bold uppercase tracking-wider">முதன்மை ஜோதிடர்</span>
+              <div className="flex items-center justify-between text-[#FFD91A]">
+                <div className="flex items-center gap-1.5">
+                  <Award size={14} />
+                  <span className="text-[10px] font-bold uppercase tracking-wider">முதன்மை ஜோதிடர்</span>
+                </div>
+                <span className="text-[10px] font-bold text-[#FFD91A] bg-[#74191A] px-2 py-0.5 rounded-full border border-[#C9971A]/40">
+                  {BUSINESS_INFO.generationText}
+                </span>
               </div>
               <p className="font-heading text-base font-extrabold text-[#F4D21F] tracking-wide">
                 {ASTROLOGER_PROFILE.name}
@@ -45,18 +50,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                 </span>
               </p>
 
-              {/* 2-row Tamil Titles arrangement */}
-              <div className="pt-1.5 border-t border-[#C9971A]/30 text-[11px] font-serif-tamil text-[#FFE98A] leading-relaxed">
-                <p className="font-semibold text-[#F4D21F]">
-                  {ASTROLOGER_PROFILE.titleRow1.join(' • ')}
-                </p>
-                <p className="font-semibold text-[#FFE98A]/90 mt-0.5">
-                  {ASTROLOGER_PROFILE.titleRow2.join(' • ')}
-                </p>
-              </div>
+              <p className="text-[11px] text-[#FFE98A] font-serif-tamil font-bold pt-1 border-t border-[#C9971A]/30">
+                பாரம்பரிய வேத கணித ஜோதிடர்
+              </p>
 
               <p className="text-[11px] text-[#FFF8E7]/70 mt-1 leading-relaxed">
-                பாரம்பரிய வேத கணித முறைகள் மற்றும் சாஸ்திர விதிகளின்படி துல்லியமான ஜோதிட ஆலோசனைகள்.
+                சாஸ்திர விதிகளின்படி துல்லியமான பிறந்த ஜாதக கணிப்பு, திருமணப் பொருத்தம் & வாஸ்து ஆலோசனைகள்.
               </p>
             </div>
 
@@ -168,14 +167,30 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
             </h4>
 
             <div className="space-y-2.5 text-xs text-[#FFF8E7]/85">
+              {/* Office Address */}
               <div className="flex items-start gap-2.5">
+                <MapPin size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
+                <div className="text-[11px] leading-relaxed">
+                  <p className="font-bold text-[#F4D21F] mb-0.5">அலுவலக முகவரி:</p>
+                  <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
+                  <p>வெங்கடாசலபதி நகர்,</p>
+                  <p>கூ.கவுண்டம்பாளையம்,</p>
+                  <p>கோவை - 641 020.</p>
+                </div>
+              </div>
+
+              {/* All 3 Phone Numbers with +91 */}
+              <div className="flex items-start gap-2.5 pt-1 border-t border-[#C9971A]/20">
                 <Phone size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
-                <div>
-                  <a href={`tel:${BUSINESS_INFO.primaryPhone}`} className="hover:text-[#F4D21F] block">
-                    80981 03070
+                <div className="space-y-1">
+                  <a href={`tel:${BUSINESS_INFO.primaryPhone}`} className="hover:text-[#F4D21F] block font-semibold transition-colors">
+                    {BUSINESS_INFO.primaryPhoneDisplay}
                   </a>
-                  <a href={`tel:${BUSINESS_INFO.secondaryPhone}`} className="hover:text-[#F4D21F] block">
-                    86672 45331
+                  <a href={`tel:${BUSINESS_INFO.secondaryPhone}`} className="hover:text-[#F4D21F] block font-semibold transition-colors">
+                    {BUSINESS_INFO.secondaryPhoneDisplay}
+                  </a>
+                  <a href={`tel:${BUSINESS_INFO.tertiaryPhone}`} className="hover:text-[#F4D21F] block font-semibold transition-colors">
+                    {BUSINESS_INFO.tertiaryPhoneDisplay}
                   </a>
                 </div>
               </div>
@@ -188,7 +203,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                   rel="noopener noreferrer"
                   className="hover:text-[#25D366] transition-colors font-medium"
                 >
-                  WhatsApp: 80981 03070
+                  WhatsApp: +91 80981 03070
                 </a>
               </div>
 

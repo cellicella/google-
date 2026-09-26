@@ -27,14 +27,21 @@ export const TopBar: React.FC = () => {
               href={`tel:${BUSINESS_INFO.primaryPhone}`}
               className="hover:text-[#B52222] transition-colors"
             >
-              80981 03070
+              {BUSINESS_INFO.primaryPhoneDisplay}
             </a>
             <span className="text-[#74191A]/40">/</span>
             <a
               href={`tel:${BUSINESS_INFO.secondaryPhone}`}
               className="hover:text-[#B52222] transition-colors"
             >
-              86672 45331
+              {BUSINESS_INFO.secondaryPhoneDisplay}
+            </a>
+            <span className="text-[#74191A]/40">/</span>
+            <a
+              href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
+              className="hover:text-[#B52222] transition-colors"
+            >
+              {BUSINESS_INFO.tertiaryPhoneDisplay}
             </a>
           </div>
 

@@ -9,7 +9,7 @@ export interface ServiceItem {
   benefits: string[];
   requiredDetails: string[];
   pariharamInfo?: string;
-  iconType: 'jadhaga' | 'thirumana' | 'dosham' | 'kairekai' | 'prasannam' | 'enn_kanitham' | 'muhurtham' | 'career';
+  iconType: 'jadhaga' | 'thirumana' | 'dosham' | 'kairekai' | 'prasannam' | 'enn_kanitham' | 'muhurtham' | 'career' | 'vaasthu' | 'jadhagam_writing';
 }
 
 export interface ArticleItem {
@@ -95,7 +95,7 @@ export interface ContactFormData {
   message: string;
 }
 
-export type SocialPlatformId = 'instagram' | 'youtube' | 'facebook' | 'telegram';
+export type SocialPlatformId = 'instagram' | 'youtube' | 'facebook' | 'telegram' | 'whatsapp_channel';
 
 export interface SocialMediaConfig {
   id: SocialPlatformId;

@@ -495,7 +495,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenA
               முக்கிய சேவைகள்
             </p>
             <div className="grid grid-cols-2 gap-2 px-1">
-              {SERVICES.slice(0, 6).map((s) => (
+              {SERVICES.map((s) => (
                 <button
                   key={s.slug}
                   onClick={() => handleNavClick(`/services/${s.slug}`)}

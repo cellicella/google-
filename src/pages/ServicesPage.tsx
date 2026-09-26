@@ -16,7 +16,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
   const filteredServices = SERVICES.filter((s) => {
     if (activeCategory === 'all') return true;
-    if (activeCategory === 'jadhaga') return s.id === 'jadhaga' || s.id === 'career' || s.id === 'prasannam';
+    if (activeCategory === 'jadhaga') return s.id === 'jadhaga' || s.id === 'career' || s.id === 'prasannam' || s.id === 'jadhagam-writing' || s.id === 'vaasthu';
     if (activeCategory === 'marriage') return s.id === 'thirumana-porutham' || s.id === 'muhurtham';
     if (activeCategory === 'dosham') return s.id === 'dosham-pariharam' || s.id === 'kairekai' || s.id === 'enn-kanitham';
     return true;

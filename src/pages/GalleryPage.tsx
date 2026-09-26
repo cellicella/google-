@@ -87,9 +87,8 @@ export const GalleryPage: React.FC = () => {
               <h2 className="font-heading text-2xl sm:text-3xl font-black text-[#74191A]">
                 {ASTROLOGER_PROFILE.name} <span className="font-mono text-sm sm:text-base font-bold text-[#8A5A0A]">({ASTROLOGER_PROFILE.qualifications})</span>
               </h2>
-              <div className="font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A] space-y-0.5">
-                <p>{ASTROLOGER_PROFILE.titleRow1.join(' • ')}</p>
-                <p>{ASTROLOGER_PROFILE.titleRow2.join(' • ')}</p>
+              <div className="font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A]">
+                <p>பாரம்பரிய கணித ஜோதிடர் · 12ம் தலைமுறை</p>
               </div>
               <p className="text-xs text-[#4A1012] font-serif-tamil pt-1 font-medium">
                 அரசு பதிவு எண்: <strong className="text-[#74191A]">{ASTROLOGER_PROFILE.govReg}</strong> · தமிழ்நாடு

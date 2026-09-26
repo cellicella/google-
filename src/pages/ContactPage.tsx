@@ -102,16 +102,32 @@ export const ContactPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* 2-row Tamil Titles arrangement */}
-                  <div className="pt-2 border-t border-[#C9971A]/30 text-[11px] font-serif-tamil text-[#74191A] font-bold leading-relaxed space-y-0.5">
-                    <p>{ASTROLOGER_PROFILE.titleRow1.join(' • ')}</p>
-                    <p>{ASTROLOGER_PROFILE.titleRow2.join(' • ')}</p>
-                  </div>
+                  <p className="text-xs font-bold text-[#8A5A0A] pt-1.5 border-t border-[#C9971A]/30">
+                    பாரம்பரிய வேத கணித ஜோதிடர் · {BUSINESS_INFO.generationText}
+                  </p>
 
                   <p className="text-xs text-[#1B0D09]/85 pt-1 border-t border-[#C9971A]/20 flex items-center gap-1.5 font-medium">
                     <ShieldCheck size={14} className="text-[#74191A]" />
                     அரசு பதிவு எண்: <strong className="text-[#74191A]">{ASTROLOGER_PROFILE.govReg}</strong>
                   </p>
+                </div>
+
+                {/* Office Address */}
+                <div className="flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-[#74191A] text-[#FFD91A] flex-shrink-0">
+                    <MapPin size={18} />
+                  </div>
+                  <div>
+                    <h3 className="text-xs font-bold text-[#74191A] uppercase tracking-wider">
+                      அலுவலக முகவரி
+                    </h3>
+                    <div className="text-xs text-[#1B0D09] font-medium leading-relaxed mt-1">
+                      <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
+                      <p>வெங்கடாசலபதி நகர்,</p>
+                      <p>கூ.கவுண்டம்பாளையம்,</p>
+                      <p>கோவை - 641 020.</p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Direct Phone Numbers */}
@@ -123,18 +139,24 @@ export const ContactPage: React.FC = () => {
                     <h3 className="text-xs font-bold text-[#74191A] uppercase tracking-wider">
                       தொலைபேசி எண்கள்
                     </h3>
-                    <div className="mt-1 space-y-0.5">
+                    <div className="mt-1 space-y-1">
                       <a
                         href={`tel:${BUSINESS_INFO.primaryPhone}`}
                         className="text-sm font-bold text-[#1B0D09] hover:text-[#74191A] block transition-colors"
                       >
-                        80981 03070
+                        {BUSINESS_INFO.primaryPhoneDisplay}
                       </a>
                       <a
                         href={`tel:${BUSINESS_INFO.secondaryPhone}`}
                         className="text-sm font-bold text-[#1B0D09] hover:text-[#74191A] block transition-colors"
                       >
-                        86672 45331
+                        {BUSINESS_INFO.secondaryPhoneDisplay}
+                      </a>
+                      <a
+                        href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
+                        className="text-sm font-bold text-[#1B0D09] hover:text-[#74191A] block transition-colors"
+                      >
+                        {BUSINESS_INFO.tertiaryPhoneDisplay}
                       </a>
                     </div>
                   </div>

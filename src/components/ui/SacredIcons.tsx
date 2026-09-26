@@ -431,6 +431,56 @@ export const PrasannamIcon: React.FC<{ className?: string; size?: number }> = ({
   </svg>
 );
 
+// Vaasthu Icon (Vedic Temple / Vastu Purusha Mandala Architecture)
+export const VaasthuIcon: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 50 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 80 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`inline-block ${className}`}
+  >
+    <rect x="10" y="10" width="60" height="60" rx="4" fill="#FFF8D6" stroke="#74191A" strokeWidth="2.5" />
+    <rect x="22" y="22" width="36" height="36" fill="#FFD91A" stroke="#74191A" strokeWidth="1.8" />
+    <line x1="40" y1="10" x2="40" y2="70" stroke="#74191A" strokeWidth="1.5" strokeDasharray="3 2" />
+    <line x1="10" y1="40" x2="70" y2="40" stroke="#74191A" strokeWidth="1.5" strokeDasharray="3 2" />
+    <circle cx="40" cy="40" r="8" fill="#74191A" />
+    <circle cx="40" cy="40" r="3.5" fill="#FFD91A" />
+    {/* Direction points */}
+    <path d="M40 14 L43 20 L37 20 Z" fill="#74191A" />
+    <path d="M40 66 L43 60 L37 60 Z" fill="#74191A" />
+    <path d="M14 40 L20 43 L20 37 Z" fill="#74191A" />
+    <path d="M66 40 L60 43 L60 37 Z" fill="#74191A" />
+  </svg>
+);
+
+// Jadhagam Writing Icon (Sacred Parchment & Golden Feather / Pen)
+export const JadhagamWritingIcon: React.FC<{ className?: string; size?: number }> = ({ className = '', size = 50 }) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 80 80"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`inline-block ${className}`}
+  >
+    {/* Book / Notebook Frame */}
+    <rect x="14" y="12" width="46" height="56" rx="4" fill="#FFFDF5" stroke="#74191A" strokeWidth="2.5" />
+    <rect x="18" y="16" width="38" height="48" fill="#FFF8D6" stroke="#C9971A" strokeWidth="1" />
+    {/* Horoscopic Grid Miniature */}
+    <rect x="23" y="22" width="28" height="28" fill="#FFD91A" stroke="#74191A" strokeWidth="1.2" />
+    <line x1="23" y1="36" x2="51" y2="36" stroke="#74191A" strokeWidth="1" />
+    <line x1="37" y1="22" x2="37" y2="50" stroke="#74191A" strokeWidth="1" />
+    {/* Lines representing written text */}
+    <line x1="23" y1="54" x2="48" y2="54" stroke="#74191A" strokeWidth="1.5" strokeLinecap="round" />
+    <line x1="23" y1="58" x2="42" y2="58" stroke="#74191A" strokeWidth="1.5" strokeLinecap="round" />
+    {/* Traditional Quill / Pen */}
+    <path d="M66 12 C64 24 54 36 44 46 L40 50 L42 45 L52 35 C60 25 66 14 66 12 Z" fill="#C9971A" stroke="#74191A" strokeWidth="1.5" />
+    <circle cx="41" cy="48" r="1.5" fill="#74191A" />
+  </svg>
+);
+
 // Helper to render service icon dynamically
 export const ServiceIcon: React.FC<{ type: string; className?: string; size?: number }> = ({ type, className, size = 44 }) => {
   switch (type) {
@@ -450,6 +500,10 @@ export const ServiceIcon: React.FC<{ type: string; className?: string; size?: nu
       return <MuhurthamIcon className={className} size={size} />;
     case 'career':
       return <BrassVilakku className={className} size={size} animate={false} />;
+    case 'vaasthu':
+      return <VaasthuIcon className={className} size={size} />;
+    case 'jadhagam_writing':
+      return <JadhagamWritingIcon className={className} size={size} />;
     default:
       return <DurgaAmmanEmblem className={className} size={size} />;
   }
