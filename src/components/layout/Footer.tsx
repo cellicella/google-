@@ -51,7 +51,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
               </p>
 
               <p className="text-[11px] text-[#FFE98A] font-serif-tamil font-bold pt-1 border-t border-[#C9971A]/30">
-                பாரம்பரிய வேத கணித ஜோதிடர்
+                {ASTROLOGER_PROFILE.mainTitle || 'ஜோதிட மாமணி'} · பாரம்பரிய வேத கணித ஜோதிடர்
               </p>
 
               <p className="text-[11px] text-[#FFF8E7]/70 mt-1 leading-relaxed">
@@ -172,6 +172,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                 <MapPin size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
                 <div className="text-[11px] leading-relaxed">
                   <p className="font-bold text-[#F4D21F] mb-0.5">அலுவலக முகவரி:</p>
+                  <p>Door No. 93/50,</p>
                   <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
                   <p>வெங்கடாசலபதி நகர்,</p>
                   <p>கூ.கவுண்டம்பாளையம்,</p>
@@ -179,7 +180,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                 </div>
               </div>
 
-              {/* All 3 Phone Numbers with +91 */}
+              {/* Official Phone Numbers with +91 */}
               <div className="flex items-start gap-2.5 pt-1 border-t border-[#C9971A]/20">
                 <Phone size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
                 <div className="space-y-1">
@@ -188,9 +189,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                   </a>
                   <a href={`tel:${BUSINESS_INFO.secondaryPhone}`} className="hover:text-[#F4D21F] block font-semibold transition-colors">
                     {BUSINESS_INFO.secondaryPhoneDisplay}
-                  </a>
-                  <a href={`tel:${BUSINESS_INFO.tertiaryPhone}`} className="hover:text-[#F4D21F] block font-semibold transition-colors">
-                    {BUSINESS_INFO.tertiaryPhoneDisplay}
                   </a>
                 </div>
               </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight, Sparkles, BookOpen, Plus, Trash2, Edit3, CheckCircle, X, Search } from 'lucide-react';
 import { ArticleItem } from '../types';
 import { apiService } from '../services/api';
+import { DailyAstrologyTimings } from '../components/home/DailyAstrologyTimings';
 
 interface UpdatesPageProps {
   onSelectArticle: (slug: string) => void;
@@ -102,6 +103,9 @@ export const UpdatesPage: React.FC<UpdatesPageProps> = ({ onSelectArticle }) => 
           </div>
         </div>
       </section>
+
+      {/* Daily Astrology Timings (இன்றைய ஜோதிட நேரங்கள்) */}
+      <DailyAstrologyTimings />
 
       {/* Search & Filter Bar */}
       <section className="py-8 bg-[#FFF8D6] border-b border-[#C9971A]/30">

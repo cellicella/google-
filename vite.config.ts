@@ -12,6 +12,15 @@ export default defineConfig(() => {
       },
     },
     server: {
+      port: 3000,
+      host: '0.0.0.0',
+      proxy: {
+        '/api/panchang': {
+          target: 'https://jyotish-api.bda.ai',
+          changeOrigin: true,
+          rewrite: (p) => p.replace(/^\/api\/panchang/, '/panchang'),
+        },
+      },
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.
       hmr: process.env.DISABLE_HMR !== 'true',

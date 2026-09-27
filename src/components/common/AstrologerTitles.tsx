@@ -90,10 +90,13 @@ export const AstrologerTitles: React.FC<AstrologerTitlesProps> = ({
         {/* Astrologer Designation & Name */}
         <div className="mb-3">
           <div className="inline-flex items-center gap-2 flex-wrap justify-center mb-1">
+            <span className="px-2.5 py-0.5 rounded-full bg-[#FFD91A] text-[#74191A] font-extrabold text-[11px] tracking-wide shadow-xs">
+              {ASTROLOGER_PROFILE.mainTitle || 'ஜோதிட மாமணி'}
+            </span>
             <span className="text-[11px] font-bold text-[#FFD91A] uppercase tracking-wider">
               முதன்மை வேத கணித ஜோதிடர்
             </span>
-            <span className="px-2 py-0.5 rounded-full bg-[#FFD91A] text-[#74191A] font-extrabold text-[10px] tracking-wide shadow-xs">
+            <span className="px-2 py-0.5 rounded-full bg-[#5C1314] text-[#FFD91A] border border-[#FFD91A]/40 font-extrabold text-[10px] tracking-wide shadow-xs">
               12ம் தலைமுறை
             </span>
           </div>

@@ -33,8 +33,8 @@ export const TelegramIcon: React.FC<{ size?: number; className?: string }> = ({ 
 );
 
 export const WhatsAppChannelIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className = '' }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className}>
+    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm.01 17.06c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.09-.39-.12-.56.12-.17.25-.64.81-.79.98-.14.17-.29.18-.54.06-.25-.12-1.05-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.5.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.03 2.6.12.17 1.77 2.7 4.29 3.78.6.26 1.07.41 1.43.53.6.19 1.15.16 1.58.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.15-1.18-.06-.11-.23-.17-.48-.29z" />
   </svg>
 );
 
@@ -363,7 +363,7 @@ export const CtaSocialStrip: React.FC<{ className?: string }> = ({ className = '
   return (
     <div className={`flex flex-wrap items-center justify-center gap-3 ${className}`}>
       <span className="text-xs font-bold text-[#74191A] uppercase tracking-wider font-serif-tamil">
-        எங்களை பின்தொடர:
+        எங்களைப் பின் தொடர:
       </span>
       <div className="flex items-center gap-2">
         {SOCIAL_ITEMS.map((item) => {
@@ -399,5 +399,57 @@ export const CtaSocialStrip: React.FC<{ className?: string }> = ({ className = '
         })}
       </div>
     </div>
+  );
+};
+
+// 6. Dedicated "எங்களைப் பின் தொடர" Section (Follow Us Section)
+export const FollowUsSection: React.FC<{ className?: string }> = ({ className = '' }) => {
+  return (
+    <section className={`py-12 bg-white/90 border-t border-b border-[#C9971A]/30 ${className}`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="inline-flex items-center gap-2 text-xs font-bold text-[#74191A] uppercase tracking-wider mb-2">
+          <span>அதிகாரப்பூர்வ இணைப்புகள்</span>
+        </div>
+        <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#74191A] mb-2">
+          எங்களைப் பின் தொடர
+        </h3>
+        <p className="text-xs sm:text-sm text-[#4A1012] font-serif-tamil font-medium max-w-xl mx-auto mb-8">
+          ஜோதிட பலன்கள், தினசரி நேரங்கள் மற்றும் விசேஷ ஆன்மீக தகவல்களை உடனுக்குடன் பெற எங்கள் அதிகாரப்பூர்வ பக்கங்களை பின்தொடரவும்.
+        </p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 max-w-5xl mx-auto">
+          {SOCIAL_ITEMS.map((item) => {
+            return (
+              <a
+                key={item.id}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-4 rounded-2xl bg-gradient-to-br from-[#FFFDF7] to-[#FFF8D6] border-2 border-[#E5B523]/60 hover:border-[#74191A] shadow-xs hover:shadow-md transition-all flex flex-col items-center justify-between gap-3 text-center group cursor-pointer"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#74191A] text-[#FFD91A] flex items-center justify-center shadow-xs group-hover:scale-105 transition-transform">
+                  <PlatformIcon id={item.id} size={22} />
+                </div>
+                <div>
+                  <h4 className="font-heading text-sm font-bold text-[#74191A]">
+                    {item.platform}
+                  </h4>
+                  <p className="text-[11px] text-[#8A5A0A] font-semibold mt-0.5">
+                    {item.id === 'whatsapp_channel' ? 'வாட்ஸ்அப் சேனல்' : item.tamilName}
+                  </p>
+                  <p className="text-[10px] font-mono text-[#74191A]/80 line-clamp-1 mt-1">
+                    {item.id === 'whatsapp_channel' ? 'Follow the Imjothidar channel on WhatsApp' : `@${item.handle}`}
+                  </p>
+                </div>
+                <span className="w-full py-1.5 px-2.5 rounded-lg bg-[#74191A] text-[#FFD91A] text-[11px] font-bold inline-flex items-center justify-center gap-1 group-hover:bg-[#5C1314] transition-colors">
+                  <span>இணைந்திடுக</span>
+                  <ExternalLink size={11} />
+                </span>
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 };

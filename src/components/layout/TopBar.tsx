@@ -36,13 +36,6 @@ export const TopBar: React.FC = () => {
             >
               {BUSINESS_INFO.secondaryPhoneDisplay}
             </a>
-            <span className="text-[#74191A]/40">/</span>
-            <a
-              href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
-              className="hover:text-[#B52222] transition-colors"
-            >
-              {BUSINESS_INFO.tertiaryPhoneDisplay}
-            </a>
           </div>
 
           <span className="text-[#74191A]/40 hidden lg:inline">|</span>

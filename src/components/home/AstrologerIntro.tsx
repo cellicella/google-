@@ -68,6 +68,9 @@ export const AstrologerIntro: React.FC<AstrologerIntroProps> = ({
                   <span className="px-2.5 py-0.5 rounded-full bg-[#74191A] text-[#FFD91A] font-mono text-xs font-bold">
                     {ASTROLOGER_PROFILE.qualifications}
                   </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-[#74191A] text-[#FFD91A] font-extrabold text-[11px] border border-[#FFD91A]/40 shadow-xs">
+                    {ASTROLOGER_PROFILE.mainTitle || 'ஜோதிட மாமணி'}
+                  </span>
                   <span className="px-2.5 py-0.5 rounded-full bg-[#FFD91A] text-[#74191A] font-extrabold text-[11px] border border-[#E5B523] shadow-xs">
                     {BUSINESS_INFO.generationText}
                   </span>

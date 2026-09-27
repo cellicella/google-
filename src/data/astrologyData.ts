@@ -4,58 +4,59 @@ export const ASTROLOGER_PROFILE: AstrologerProfile = {
   name: 'N. SURESH',
   qualifications: 'B.Sc., MBA., D.Astro.',
   fullName: 'N. SURESH B.Sc., MBA., D.Astro.',
+  mainTitle: 'ஜோதிட மாமணி',
   imageUrl: 'https://res.cloudinary.com/hifi11courses/image/upload/v1790360295/ChatGPT_Image_Sep_25_2026_11_07_51_PM_qwyeyp.png',
   titles: [
+    'ஜோதிட மாமணி',
     'ஜோதிட ரத்னா',
     'ஜோதிட கலாநிதி',
     'ஜோதிட சிரோன்மணி',
     'ஜோதிட வாஸஸ்பதி',
     'ஜோதிடச்சுடர்',
     'பாரம்பரிய கணித ஜோதிடர்',
-    'மாமணி',
   ],
-  titleRow1: ['ஜோதிட ரத்னா', 'ஜோதிட கலாநிதி', 'ஜோதிட சிரோன்மணி'],
-  titleRow2: ['ஜோதிட வாஸஸ்பதி', 'ஜோதிடச்சுடர்', 'பாரம்பரிய கணித ஜோதிடர்', 'மாமணி'],
+  titleRow1: ['ஜோதிட மாமணி', 'ஜோதிட ரத்னா', 'ஜோதிட கலாநிதி'],
+  titleRow2: ['ஜோதிட சிரோன்மணி', 'ஜோதிட வாஸஸ்பதி', 'ஜோதிடச்சுடர்', 'பாரம்பரிய கணித ஜோதிடர்'],
   govReg: '162/2022',
 };
 
 // Social Media configuration: Handles are confirmed.
-// URLs can be updated here at any time. When url is non-empty, the icon is clickable.
+// URLs are official and active.
 export const SOCIAL_MEDIA: Record<'instagram' | 'youtube' | 'facebook' | 'telegram' | 'whatsapp_channel', SocialMediaConfig> = {
   instagram: {
     id: 'instagram',
     platform: 'Instagram',
     tamilName: 'இன்ஸ்டாகிராம்',
-    handle: 'imjotidar',
-    url: 'https://www.instagram.com/imjotidar',
+    handle: 'imjothidar',
+    url: 'https://www.instagram.com/imjothidar',
   },
   youtube: {
     id: 'youtube',
     platform: 'YouTube',
     tamilName: 'யூடியூப்',
-    handle: 'imjotidar',
-    url: 'https://www.youtube.com/@imjotidar',
+    handle: 'imjothidar',
+    url: 'https://www.youtube.com/@imjothidar',
   },
   facebook: {
     id: 'facebook',
     platform: 'Facebook',
     tamilName: 'பேஸ்புக்',
     handle: 'துர்க்கை அம்மன் ஜோதிட நிலையம்',
-    url: '', // Editable configuration: leave empty until direct Facebook page URL is configured
+    url: 'https://www.facebook.com/share/18V3jV4a4q/',
   },
   telegram: {
     id: 'telegram',
     platform: 'Telegram',
     tamilName: 'டெலிகிராம்',
     handle: 'ஸ்ரீ துர்க்கை அம்மன் ஜோதிட நிலையம்',
-    url: '', // Editable configuration: leave empty until direct Telegram channel/group URL is configured
+    url: 'https://t.me/+7lvZuv_PAA1mZDI1',
   },
   whatsapp_channel: {
     id: 'whatsapp_channel',
     platform: 'WhatsApp Channel',
     tamilName: 'வாட்ஸ்அப் சேனல்',
-    handle: 'WhatsApp Channel',
-    url: '', // Configurable: client will provide URL. Left empty to prevent broken links
+    handle: 'Follow the Imjothidar channel on WhatsApp',
+    url: 'https://whatsapp.com/channel/0029Vb2GmPA4NViuCSaspQ2s',
   },
 };
 
@@ -66,25 +67,25 @@ export const BUSINESS_INFO = {
   astrologer: 'N. SURESH',
   qualifications: 'B.Sc., MBA., D.Astro.',
   astrologerFullName: 'N. SURESH B.Sc., MBA., D.Astro.',
+  mainTitle: 'ஜோதிட மாமணி',
   astrologerImage: ASTROLOGER_PROFILE.imageUrl,
   titles: ASTROLOGER_PROFILE.titles,
   titleRow1: ASTROLOGER_PROFILE.titleRow1,
   titleRow2: ASTROLOGER_PROFILE.titleRow2,
   govReg: '162/2022',
   generationText: '12ம் தலைமுறை',
-  phones: ['+91 80981 03070', '+91 86672 45331', '+91 88833 23228'],
-  phoneNumbersRaw: ['+918098103070', '+918667245331', '+918883323228'],
+  phones: ['+91 80981 03070', '+91 86672 45331'],
+  phoneNumbersRaw: ['+918098103070', '+918667245331'],
   primaryPhone: '+918098103070',
   primaryPhoneDisplay: '+91 80981 03070',
   secondaryPhone: '+918667245331',
   secondaryPhoneDisplay: '+91 86672 45331',
-  tertiaryPhone: '+918883323228',
-  tertiaryPhoneDisplay: '+91 88833 23228',
-  email: 'imjotidar@gmail.com',
+  email: 'imjothidar@gmail.com',
   whatsapp: '918098103070',
   timing: 'காலை 9:00 முதல் இரவு 8:00 வரை (அனைத்து நாட்களும்)',
-  addressText: 'சுப்பையா கவுண்டர் காம்ப்ளக்ஸ், வெங்கடாசலபதி நகர், கூ.கவுண்டம்பாளையம், கோவை - 641 020.',
+  addressText: 'Door No. 93/50, சுப்பையா கவுண்டர் காம்ப்ளக்ஸ், வெங்கடாசலபதி நகர், கூ.கவுண்டம்பாளையம், கோவை - 641 020.',
   addressLines: [
+    'Door No. 93/50,',
     'சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,',
     'வெங்கடாசலபதி நகர்,',
     'கூ.கவுண்டம்பாளையம்,',
@@ -489,7 +490,7 @@ export const FAQS: FaqItem[] = [
   },
   {
     question: 'ஆலோசனைக்கான கட்டணம் மற்றும் முன்பதிவு எவ்வாறு செய்வது?',
-    answer: 'எங்கள் இணையதளத்தில் உள்ள படிவம் மூலமாகவோ அல்லது +91 80981 03070 / +91 86672 45331 / +91 88833 23228 என்ற எண்களுக்கு அழைத்தோ அல்லது வாட்ஸ்அப் மூலமாகவோ எளிதாக உங்கள் நேரத்தை முன்பதிவு செய்து கொள்ளலாம்.',
+    answer: 'எங்கள் இணையதளத்தில் உள்ள படிவம் மூலமாகவோ அல்லது +91 80981 03070 / +91 86672 45331 என்ற எண்களுக்கு அழைத்தோ அல்லது வாட்ஸ்அப் மூலமாகவோ எளிதாக உங்கள் நேரத்தை முன்பதிவு செய்து கொள்ளலாம்.',
     category: 'முன்பதிவு'
   }
 ];

@@ -129,10 +129,6 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({
                   <a href={`tel:${BUSINESS_INFO.secondaryPhone}`} className="hover:text-[#74191A] underline">
                     {BUSINESS_INFO.secondaryPhoneDisplay}
                   </a>
-                  <span>·</span>
-                  <a href={`tel:${BUSINESS_INFO.tertiaryPhone}`} className="hover:text-[#74191A] underline">
-                    {BUSINESS_INFO.tertiaryPhoneDisplay}
-                  </a>
                 </div>
               </div>
               <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">

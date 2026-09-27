@@ -6,6 +6,7 @@ import { OlaichuvadiSection } from '../components/home/OlaichuvadiSection';
 import { AstrologerIntro } from '../components/home/AstrologerIntro';
 import { ServiceHighlights } from '../components/home/ServiceHighlights';
 import { OurProductsSection } from '../components/home/OurProductsSection';
+import { DailyAstrologyTimings } from '../components/home/DailyAstrologyTimings';
 import { ARTICLES, FAQS, BUSINESS_INFO } from '../data/astrologyData';
 import { Calendar, Phone, ArrowRight, HelpCircle, BookOpen, MessageCircle } from 'lucide-react';
 import { CtaSocialStrip } from '../components/common/SocialMediaBar';
@@ -53,7 +54,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
       {/* 7. Our Products Section (எங்கள் தயாரிப்புகள்) */}
       <OurProductsSection onOpenAppointment={() => onOpenAppointment()} />
 
-      {/* 8. Latest Astrology Updates / Blog Preview */}
+      {/* 8. Daily Astrology Timings (இன்றைய ஜோதிட நேரங்கள்) */}
+      <DailyAstrologyTimings />
+
+      {/* 9. Latest Astrology Updates / Blog Preview */}
       <section className="py-20 bg-[#FFF8D6] text-[#1B0D09] border-b border-[#C9971A]/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
@@ -201,13 +205,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
               >
                 <Phone size={15} />
                 <span>{BUSINESS_INFO.secondaryPhoneDisplay}</span>
-              </a>
-              <a
-                href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
-                className="px-4 py-3.5 rounded-xl bg-white border-2 border-[#74191A] text-[#74191A] text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 hover:bg-[#FFFDF5] shadow-md transition-all active:scale-95"
-              >
-                <Phone size={15} />
-                <span>{BUSINESS_INFO.tertiaryPhoneDisplay}</span>
               </a>
             </div>
           </div>

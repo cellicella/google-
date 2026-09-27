@@ -179,13 +179,6 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                     <Phone size={14} className="text-[#74191A]" />
                     <span>{BUSINESS_INFO.secondaryPhoneDisplay}</span>
                   </a>
-                  <a
-                    href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
-                    className="w-full py-2.5 px-3 rounded-xl bg-white text-[#74191A] text-xs font-extrabold flex items-center justify-center gap-2 hover:bg-[#FFFDF5] shadow transition-colors"
-                  >
-                    <Phone size={14} className="text-[#74191A]" />
-                    <span>{BUSINESS_INFO.tertiaryPhoneDisplay}</span>
-                  </a>
                 </div>
 
                 <a

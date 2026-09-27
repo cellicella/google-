@@ -109,6 +109,7 @@ export interface AstrologerProfile {
   name: string;
   qualifications: string;
   fullName: string;
+  mainTitle?: string;
   imageUrl: string;
   titles: string[];
   titleRow1: string[];

@@ -150,7 +150,9 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
 
           {/* Clean Astrologer Title in Golden Ribbon */}
           <div className="text-center font-serif-tamil text-xs sm:text-sm font-bold text-[#74191A] leading-relaxed px-5 py-2 rounded-xl bg-white/80 border border-[#E5B523]/50 backdrop-blur-xs shadow-xs">
-            <p className="flex items-center justify-center gap-2">
+            <p className="flex items-center justify-center gap-2 flex-wrap">
+              <span className="text-[#8A5A0A] font-extrabold">{ASTROLOGER_PROFILE.mainTitle || 'ஜோதிட மாமணி'}</span>
+              <span className="text-[#C9971A] font-bold select-none">•</span>
               <span>பாரம்பரிய வேத கணித ஜோதிடர்</span>
               <span className="text-[#C9971A] font-bold select-none">•</span>
               <span>அரசு பதிவு எண்: {ASTROLOGER_PROFILE.govReg}</span>
@@ -233,13 +235,6 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
             className="text-[#74191A] underline decoration-[#74191A] font-extrabold hover:text-[#B52222]"
           >
             {BUSINESS_INFO.secondaryPhoneDisplay}
-          </a>
-          <span>·</span>
-          <a
-            href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
-            className="text-[#74191A] underline decoration-[#74191A] font-extrabold hover:text-[#B52222]"
-          >
-            {BUSINESS_INFO.tertiaryPhoneDisplay}
           </a>
         </div>
 

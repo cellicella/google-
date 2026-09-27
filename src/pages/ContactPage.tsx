@@ -122,6 +122,7 @@ export const ContactPage: React.FC = () => {
                       அலுவலக முகவரி
                     </h3>
                     <div className="text-xs text-[#1B0D09] font-medium leading-relaxed mt-1">
+                      <p>Door No. 93/50,</p>
                       <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
                       <p>வெங்கடாசலபதி நகர்,</p>
                       <p>கூ.கவுண்டம்பாளையம்,</p>
@@ -151,12 +152,6 @@ export const ContactPage: React.FC = () => {
                         className="text-sm font-bold text-[#1B0D09] hover:text-[#74191A] block transition-colors"
                       >
                         {BUSINESS_INFO.secondaryPhoneDisplay}
-                      </a>
-                      <a
-                        href={`tel:${BUSINESS_INFO.tertiaryPhone}`}
-                        className="text-sm font-bold text-[#1B0D09] hover:text-[#74191A] block transition-colors"
-                      >
-                        {BUSINESS_INFO.tertiaryPhoneDisplay}
                       </a>
                     </div>
                   </div>
