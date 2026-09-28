@@ -105,10 +105,17 @@ export const DailyAstrologyTimings: React.FC<DailyAstrologyTimingsProps> = ({
           </p>
 
           {/* Location & Timezone Anchor Badge */}
-          <div className="mt-3.5 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/95 border border-[#E5B523]/70 text-[11px] sm:text-xs font-bold text-[#74191A] shadow-xs">
-            <MapPin size={13} className="text-[#B52222] shrink-0" />
+          <a
+            href="https://maps.app.goo.gl/UStwB9BZJK9YA6xE9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3.5 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-white/95 hover:bg-[#FFF4A8] border border-[#E5B523]/70 text-[11px] sm:text-xs font-bold text-[#74191A] shadow-xs transition-colors group cursor-pointer"
+            title="Google Maps-ல் அமைவிடத்தைக் காண"
+          >
+            <MapPin size={13} className="text-[#B52222] shrink-0 group-hover:scale-110 transition-transform" />
             <span>அமைவிடம்: {COIMBATORE_OFFICE.locationName} (Asia/Kolkata)</span>
-          </div>
+            <ExternalLink size={10} className="text-[#74191A]/70 ml-0.5" />
+          </a>
         </div>
 
         {/* Dynamic Date Navigation Bar */}

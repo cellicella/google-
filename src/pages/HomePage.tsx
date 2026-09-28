@@ -5,8 +5,8 @@ import { NavagrahaSection } from '../components/home/NavagrahaSection';
 import { OlaichuvadiSection } from '../components/home/OlaichuvadiSection';
 import { AstrologerIntro } from '../components/home/AstrologerIntro';
 import { ServiceHighlights } from '../components/home/ServiceHighlights';
-import { OurProductsSection } from '../components/home/OurProductsSection';
 import { DailyAstrologyTimings } from '../components/home/DailyAstrologyTimings';
+import { PlanetaryHoraSection } from '../components/home/PlanetaryHoraSection';
 import { ARTICLES, FAQS, BUSINESS_INFO } from '../data/astrologyData';
 import { Calendar, Phone, ArrowRight, HelpCircle, BookOpen, MessageCircle } from 'lucide-react';
 import { CtaSocialStrip } from '../components/common/SocialMediaBar';
@@ -51,10 +51,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
       {/* 6. Navagrahas Section (நவக்கிரகங்கள்) */}
       <NavagrahaSection />
 
-      {/* 7. Our Products Section (எங்கள் தயாரிப்புகள்) */}
-      <OurProductsSection onOpenAppointment={() => onOpenAppointment()} />
-
-      {/* 8. Daily Astrology Timings (இன்றைய ஜோதிட நேரங்கள்) */}
+      {/* 7. Daily Astrology Timings (இன்றைய ஜோதிட நேரங்கள்) */}
       <DailyAstrologyTimings />
 
       {/* 9. Latest Astrology Updates / Blog Preview */}
@@ -117,7 +114,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
         </div>
       </section>
 
-      {/* 8. FAQ Preview Section */}
+      {/* 10. Planetary Horas Section (கிரக ஓரைகளின் காலம் - ★ சுப ஓரைகள்) */}
+      <PlanetaryHoraSection />
+
+      {/* 11. FAQ Preview Section */}
       <section className="py-20 bg-[#FFFBEA] text-[#1B0D09] border-b border-[#C9971A]/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">

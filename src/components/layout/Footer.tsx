@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MessageCircle, Clock, ShieldCheck, Sparkles, Award, MapPin } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Clock, ShieldCheck, Sparkles, Award, MapPin, ExternalLink } from 'lucide-react';
 import { DurgaAmmanEmblem } from '../ui/SacredIcons';
 import { BUSINESS_INFO, SERVICES, ASTROLOGER_PROFILE } from '../../data/astrologyData';
 import { FooterSocialSection } from '../common/SocialMediaBar';
@@ -172,11 +172,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                 <MapPin size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
                 <div className="text-[11px] leading-relaxed">
                   <p className="font-bold text-[#F4D21F] mb-0.5">அலுவலக முகவரி:</p>
-                  <p>Door No. 93/50,</p>
-                  <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
-                  <p>வெங்கடாசலபதி நகர்,</p>
-                  <p>கூ.கவுண்டம்பாளையம்,</p>
-                  <p>கோவை - 641 020.</p>
+                  <a
+                    href={BUSINESS_INFO.googleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group hover:text-[#F4D21F] transition-colors"
+                    title="Google Maps-ல் வழியைப் பார்க்க"
+                  >
+                    <p>Door No. 93/50,</p>
+                    <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
+                    <p>வெங்கடாசலபதி நகர்,</p>
+                    <p>கூ.கவுண்டம்பாளையம்,</p>
+                    <p>கோவை - 641 020.</p>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-[#F4D21F] font-bold mt-1 group-hover:underline">
+                      <span>Google Maps-ல் வழியைப் பார்க்க</span>
+                      <ExternalLink size={10} />
+                    </span>
+                  </a>
                 </div>
               </div>
 

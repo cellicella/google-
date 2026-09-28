@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Phone, Mail, MessageCircle, Clock, MapPin, ShieldCheck, Send, CheckCircle, AlertCircle, Loader2, Sparkles, Award } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Clock, MapPin, ShieldCheck, Send, CheckCircle, AlertCircle, Loader2, Sparkles, Award, ExternalLink } from 'lucide-react';
 import { BUSINESS_INFO, ASTROLOGER_PROFILE } from '../data/astrologyData';
 import { ContactFormData } from '../types';
 import { apiService } from '../services/api';
@@ -121,13 +121,23 @@ export const ContactPage: React.FC = () => {
                     <h3 className="text-xs font-bold text-[#74191A] uppercase tracking-wider">
                       அலுவலக முகவரி
                     </h3>
-                    <div className="text-xs text-[#1B0D09] font-medium leading-relaxed mt-1">
+                    <a
+                      href={BUSINESS_INFO.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group text-xs text-[#1B0D09] font-medium leading-relaxed mt-1 hover:text-[#74191A] transition-colors"
+                      title="Google Maps-ல் வழியைப் பார்க்க"
+                    >
                       <p>Door No. 93/50,</p>
                       <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
                       <p>வெங்கடாசலபதி நகர்,</p>
                       <p>கூ.கவுண்டம்பாளையம்,</p>
                       <p>கோவை - 641 020.</p>
-                    </div>
+                      <span className="inline-flex items-center gap-1.5 text-xs text-[#74191A] font-bold mt-1.5 group-hover:underline">
+                        <span>Google Maps-ல் வழியைப் பார்க்க</span>
+                        <ExternalLink size={12} />
+                      </span>
+                    </a>
                   </div>
                 </div>
 

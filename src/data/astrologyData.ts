@@ -84,6 +84,7 @@ export const BUSINESS_INFO = {
   whatsapp: '918098103070',
   timing: 'காலை 9:00 முதல் இரவு 8:00 வரை (அனைத்து நாட்களும்)',
   addressText: 'Door No. 93/50, சுப்பையா கவுண்டர் காம்ப்ளக்ஸ், வெங்கடாசலபதி நகர், கூ.கவுண்டம்பாளையம், கோவை - 641 020.',
+  googleMapsUrl: 'https://maps.app.goo.gl/UStwB9BZJK9YA6xE9',
   addressLines: [
     'Door No. 93/50,',
     'சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,',
