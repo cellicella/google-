@@ -6,6 +6,7 @@ export const ASTROLOGER_PROFILE: AstrologerProfile = {
   fullName: 'N. SURESH B.Sc., MBA., D.Astro.',
   mainTitle: 'ஜோதிட மாமணி',
   imageUrl: 'https://res.cloudinary.com/hifi11courses/image/upload/v1790360295/ChatGPT_Image_Sep_25_2026_11_07_51_PM_qwyeyp.png',
+  cardImageUrl: 'https://s6.imgcdn.dev/Yp0iJi.png',
   titles: [
     'ஜோதிட மாமணி',
     'ஜோதிட ரத்னா',
@@ -92,8 +93,60 @@ export const BUSINESS_INFO = {
     'கூ.கவுண்டம்பாளையம்,',
     'கோவை - 641 020.',
   ],
+  secondBranchAddressText: '434, சுப்பையா கவுண்டர் காம்ப்ளக்ஸ், மன்னர் காடு ரோடு, ஆனைக்கட்டி, கோவை - 641108.',
+  secondBranchGoogleMapsUrl: 'https://maps.app.goo.gl/38jKzeBjRvwg3TRq9',
+  secondBranchAddressLines: [
+    '434,',
+    'சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,',
+    'மன்னர் காடு ரோடு,',
+    'ஆனைக்கட்டி,',
+    'கோவை - 641108.',
+  ],
   socialMedia: SOCIAL_MEDIA,
 };
+
+export interface BranchOffice {
+  id: string;
+  name: string;
+  shortTitle: string;
+  badge: string;
+  addressLines: string[];
+  addressText: string;
+  googleMapsUrl: string;
+}
+
+export const BRANCH_OFFICES: BranchOffice[] = [
+  {
+    id: 'main-office',
+    name: 'முதன்மை அலுவலகம்',
+    shortTitle: 'கூ.கவுண்டம்பாளையம்',
+    badge: 'தலைமை மையம்',
+    addressLines: [
+      'Door No. 93/50,',
+      'சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,',
+      'வெங்கடாசலபதி நகர்,',
+      'கூ.கவுண்டம்பாளையம்,',
+      'கோவை - 641 020.',
+    ],
+    addressText: 'Door No. 93/50, சுப்பையா கவுண்டர் காம்ப்ளக்ஸ், வெங்கடாசலபதி நகர், கூ.கவுண்டம்பாளையம், கோவை - 641 020.',
+    googleMapsUrl: 'https://maps.app.goo.gl/UStwB9BZJK9YA6xE9',
+  },
+  {
+    id: 'second-branch',
+    name: 'இரண்டாவது கிளை',
+    shortTitle: 'ஆனைக்கட்டி',
+    badge: 'கிளை அலுவலகம்',
+    addressLines: [
+      '434,',
+      'சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,',
+      'மன்னர் காடு ரோடு,',
+      'ஆனைக்கட்டி,',
+      'கோவை - 641108.',
+    ],
+    addressText: '434, சுப்பையா கவுண்டர் காம்ப்ளக்ஸ், மன்னர் காடு ரோடு, ஆனைக்கட்டி, கோவை - 641108.',
+    googleMapsUrl: 'https://maps.app.goo.gl/38jKzeBjRvwg3TRq9',
+  },
+];
 
 export const SERVICES: ServiceItem[] = [
   {

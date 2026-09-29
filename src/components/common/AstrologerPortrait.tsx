@@ -8,6 +8,7 @@ interface AstrologerPortraitProps {
   variant?: 'circle' | 'arch' | 'card';
   showBadge?: boolean;
   altText?: string;
+  src?: string;
 }
 
 export const AstrologerPortrait: React.FC<AstrologerPortraitProps> = ({
@@ -16,12 +17,14 @@ export const AstrologerPortrait: React.FC<AstrologerPortraitProps> = ({
   variant = 'circle',
   showBadge = false,
   altText,
+  src,
 }) => {
   const [currentSrcIndex, setCurrentSrcIndex] = useState(0);
   const [hasError, setHasError] = useState(false);
 
-  // Candidate image paths to ensure 100% successful loading, starting with the Cloudinary URL
+  // Candidate image paths to ensure 100% successful loading, starting with custom src or default image
   const candidateSources = [
+    src || ASTROLOGER_PROFILE.imageUrl,
     ASTROLOGER_PROFILE.imageUrl,
     'https://res.cloudinary.com/hifi11courses/image/upload/v1790360295/ChatGPT_Image_Sep_25_2026_11_07_51_PM_qwyeyp.png',
     '/suresh.png',

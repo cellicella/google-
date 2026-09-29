@@ -44,7 +44,10 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onOpenAppointment, onNavig
               <div className="relative p-3 rounded-3xl bg-gradient-to-b from-[#FFD91A] via-[#C9971A] to-[#74191A] shadow-2xl max-w-md w-full">
                 <div className="bg-[#74191A] rounded-[22px] p-6 text-center text-[#FFFDF5] relative overflow-hidden border border-[#FFD91A]/30">
                   <div className="mb-6 flex justify-center">
-                    <AstrologerPortrait size="2xl" />
+                    <AstrologerPortrait
+                      size="2xl"
+                      src={ASTROLOGER_PROFILE.cardImageUrl || 'https://s6.imgcdn.dev/Yp0iJi.png'}
+                    />
                   </div>
 
                   <AstrologerTitles variant="card" showGovReg={true} />

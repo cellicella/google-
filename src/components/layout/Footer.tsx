@@ -167,11 +167,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
             </h4>
 
             <div className="space-y-2.5 text-xs text-[#FFF8E7]/85">
-              {/* Office Address */}
+              {/* Office Address - Main Office */}
               <div className="flex items-start gap-2.5">
                 <MapPin size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
                 <div className="text-[11px] leading-relaxed">
-                  <p className="font-bold text-[#F4D21F] mb-0.5">அலுவலக முகவரி:</p>
+                  <p className="font-bold text-[#F4D21F] mb-0.5">முதன்மை அலுவலகம் (கூ.கவுண்டம்பாளையம்):</p>
                   <a
                     href={BUSINESS_INFO.googleMapsUrl}
                     target="_blank"
@@ -184,7 +184,32 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAppointment })
                     <p>வெங்கடாசலபதி நகர்,</p>
                     <p>கூ.கவுண்டம்பாளையம்,</p>
                     <p>கோவை - 641 020.</p>
-                    <span className="inline-flex items-center gap-1 text-[10px] text-[#F4D21F] font-bold mt-1 group-hover:underline">
+                    <span className="inline-flex items-center gap-1 text-[10px] text-[#F4D21F] font-bold mt-0.5 group-hover:underline">
+                      <span>Google Maps-ல் வழியைப் பார்க்க</span>
+                      <ExternalLink size={10} />
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              {/* Office Address - Second Branch */}
+              <div className="flex items-start gap-2.5 pt-2 border-t border-[#C9971A]/20">
+                <MapPin size={15} className="text-[#F4D21F] mt-0.5 flex-shrink-0" />
+                <div className="text-[11px] leading-relaxed">
+                  <p className="font-bold text-[#F4D21F] mb-0.5">இரண்டாவது கிளை (ஆனைக்கட்டி):</p>
+                  <a
+                    href={BUSINESS_INFO.secondBranchGoogleMapsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block group hover:text-[#F4D21F] transition-colors"
+                    title="Google Maps-ல் வழியைப் பார்க்க"
+                  >
+                    <p>434,</p>
+                    <p>சுப்பையா கவுண்டர் காம்ப்ளக்ஸ்,</p>
+                    <p>மன்னர் காடு ரோடு,</p>
+                    <p>ஆனைக்கட்டி,</p>
+                    <p>கோவை - 641108.</p>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-[#F4D21F] font-bold mt-0.5 group-hover:underline">
                       <span>Google Maps-ல் வழியைப் பார்க்க</span>
                       <ExternalLink size={10} />
                     </span>

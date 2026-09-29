@@ -13,7 +13,6 @@ import {
   Calendar,
   MapPin,
   ExternalLink,
-  Info,
 } from 'lucide-react';
 import {
   fetchDailyPanchang,
@@ -387,25 +386,6 @@ export const DailyAstrologyTimings: React.FC<DailyAstrologyTimingsProps> = ({
                   </span>
                 </div>
               )}
-            </div>
-
-            {/* Mandatory API Provenance & Attribution Bar */}
-            <div className="mt-6 text-center">
-              <div className="inline-flex flex-wrap items-center justify-center gap-2 text-[11px] text-[#8A5A0A] bg-[#FFF8D6]/90 border border-[#E5C358]/50 rounded-xl px-4 py-2">
-                <Info size={13} className="text-[#C9971A] shrink-0" />
-                <span>
-                  {timingData.attribution} · உரிமம்: {timingData.license}
-                </span>
-                <a
-                  href="https://www.bda.ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-0.5 text-[#74191A] font-bold underline hover:text-[#B52222]"
-                >
-                  <span>BDA Jyotish</span>
-                  <ExternalLink size={10} />
-                </a>
-              </div>
             </div>
           </>
         )}

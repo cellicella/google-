@@ -33,7 +33,11 @@ export const AstrologerIntro: React.FC<AstrologerIntroProps> = ({
 
                 {/* Big Astrologer Suresh Photo */}
                 <div className="mb-6 flex justify-center">
-                  <AstrologerPortrait size="2xl" showBadge={false} />
+                  <AstrologerPortrait
+                    size="2xl"
+                    showBadge={false}
+                    src={ASTROLOGER_PROFILE.cardImageUrl || 'https://s6.imgcdn.dev/Yp0iJi.png'}
+                  />
                 </div>
 
                 {/* Astrologer Name, Qualifications & Confirmed Titles */}

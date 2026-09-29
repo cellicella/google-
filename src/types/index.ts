@@ -111,6 +111,7 @@ export interface AstrologerProfile {
   fullName: string;
   mainTitle?: string;
   imageUrl: string;
+  cardImageUrl?: string;
   titles: string[];
   titleRow1: string[];
   titleRow2: string[];

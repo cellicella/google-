@@ -7,6 +7,8 @@ import { AstrologerIntro } from '../components/home/AstrologerIntro';
 import { ServiceHighlights } from '../components/home/ServiceHighlights';
 import { DailyAstrologyTimings } from '../components/home/DailyAstrologyTimings';
 import { PlanetaryHoraSection } from '../components/home/PlanetaryHoraSection';
+import { PariharaVivaramSection } from '../components/home/PariharaVivaramSection';
+import { BranchLocationsSection } from '../components/home/BranchLocationsSection';
 import { ARTICLES, FAQS, BUSINESS_INFO } from '../data/astrologyData';
 import { Calendar, Phone, ArrowRight, HelpCircle, BookOpen, MessageCircle } from 'lucide-react';
 import { CtaSocialStrip } from '../components/common/SocialMediaBar';
@@ -117,7 +119,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
       {/* 10. Planetary Horas Section (கிரக ஓரைகளின் காலம் - ★ சுப ஓரைகள்) */}
       <PlanetaryHoraSection />
 
-      {/* 11. FAQ Preview Section */}
+      {/* 11. Parihara Vivarangal Section (பரிகார விவரங்கள்) */}
+      <PariharaVivaramSection />
+
+      {/* 12. FAQ Preview Section */}
       <section className="py-20 bg-[#FFFBEA] text-[#1B0D09] border-b border-[#C9971A]/30">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -161,6 +166,9 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenAppointmen
           </div>
         </div>
       </section>
+
+      {/* 13. Office Locations / Branches (முதன்மை அலுவலகம் & இரண்டாவது கிளை) */}
+      <BranchLocationsSection />
 
       {/* 9. Direct Call & Booking Banner (Yellow + Maroon) */}
       <section className="py-16 bg-gradient-to-r from-[#FFD91A] via-[#F5D21F] to-[#FFE98A] text-[#1B0D09] relative overflow-hidden border-b-2 border-[#74191A]">
